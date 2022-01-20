@@ -1,3 +1,3 @@
-# Android project proposal starter
+# Remind To Remember
 
-This is a project template for all phases&mdash;from proposal to final delivery&mdash;of the personal Android project in the [Deep Dive Coding](https://deepdivecoding.com/) [Java + Android bootcamp](https://deepdivecoding.com/java-android/).
+This is an application that lets individuals build reminders that challenge and build their memory rather than spoon-feeding them the information. The purpose is to build cognitive ability while also fulfilling a need for reminders.
