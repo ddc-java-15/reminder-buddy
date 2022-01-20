@@ -28,16 +28,34 @@ Here is one (silly) example of an intended user, along with a user story. Please
 
 ## Functionality
 
-List (using a bullet list---or ordered list, if order is relevant) the key functional aspects that will be provided by the app---i.e. tell us what the user will be able to do using the app. This should not simply be a re-statement of the [summary](#summary), but should instead provide a more specific articulation of the functionality and user experience. 
+1. Creates reminders of important events
+
+2. Builds cognitive ability related to memory
+
+3. Presents data that helps determine memory over time
+
+4. Customized reminders: how many times before and how often
+
 
 ## Persistent data
+
+* List of events
+* Timing of reminders
+* Intervals of reminders (how often, how many times reminded, reminders after correct answers for reinforcement)
+* Data of answers of reminders (percentage correct, percentage wrong, retention rates)
 
 List, in general terms and using a bullet list, what content will be stored on the Android device. This should include any information that users of your app would expect to be maintained (i.e. without connection to a server) across multiple sessions of use. 
     
 ## Device/external services
 
-If the client component will need to access special services of the device (e.g. sensors, contacts, messaging), list them here using a bullet list. Also, if the client component will need to access already-existing external services (e.g. real-time weather data, Open Movie Database, Open Trivia Database), those should also be listed here; any such references to external services should include links to the main page or API description page for the service.
+TBD
+Calendar services?
 
 ## Stretch goals/possible enhancements 
 
-If you can identify functional elements of the software that you think might not be achievable in the scope of the project, but which would nonetheless add significant value if you were able to include them, list them here. For now, we recommend listing them in order of complexity/amount of work, from the least to the most.
+Send reminders to friends and family in a similar style
+Have a charicature that serves as your buddy (cute and cuddly)
+Color-coded flashcards that help people determine the zone
+* Red for personal
+* Green for business
+* Blue for friends
