@@ -12,20 +12,6 @@ This application is a tool to help people build cognition using a normal part of
 
   > As an elderly person it's important to continue strengthening the mind to provide better living conditions later. This simple application is easy to use and helps build mental strength.
 
-Write a bullet list here, including at least 2 different types of intended users. Make it reasonably specific; simply saying "Anyone who likes games" (for example) is not sufficiently specific.
-
-For each type of intended user, include at least 1 _user story_. A user story is usually just 1 simple sentence (no more than 2 sentences), in the voice of the intended user, stating a specific task that the user performs using the app, and the benefit that will be obtained. The simplest user stories take the form 
-
-> As a <type of intended user (_who_)> I want to <use of feature or functionality (_what_)> so that <benefit (_why_).
-
-Please avoid writing too much for the user story. In particular, if the way the user story is written makes it difficult to see the _who_, _what_, and _why_, then you probably need to re-write it more directly. (On the other hand, a user story should not simply be a re-statement of the intended user description.)
-
-Here is one (silly) example of an intended user, along with a user story. Please note not only the conceptual structure, but the Markdown syntax used.
-
-* People who like to use randomness in their decision making.
-
-    > As someone who enjoys randomness in my life, I need an app that lets me flip a virtual coin or roll one or more virtual dice, so that I can base my decisions on randomness, without having to carry coins or dice in my pockets.
-
 ## Functionality
 
 1. Creates reminders of important events
@@ -44,8 +30,6 @@ Here is one (silly) example of an intended user, along with a user story. Please
 * Intervals of reminders (how often, how many times reminded, reminders after correct answers for reinforcement)
 * Data of answers of reminders (percentage correct, percentage wrong, retention rates)
 
-List, in general terms and using a bullet list, what content will be stored on the Android device. This should include any information that users of your app would expect to be maintained (i.e. without connection to a server) across multiple sessions of use. 
-    
 ## Device/external services
 
 TBD
