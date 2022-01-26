@@ -10,15 +10,15 @@ This application is a tool to help people build cognition using a normal part of
 
 * Individuals who have issues with cognition and memory who desire to have stronger mental prowess to remembering things.
 
-  > As an elderly person it's important to continue strengthening the mind to provide better living conditions later. This simple application is easy to use and helps build mental strength.
+  > As someone who finds remembering tasks challenging, I want something to provide me with opportunity to strengthen my memory, so I can stay on top of my life's important events and appointments.
 
 ## Functionality
 
 1. Creates reminders of important events
 
-2. Builds cognitive ability related to memory
+2. Strengthening event memory to build upon cognitive ability through assisted creative flashcard creation
 
-3. Presents data that helps determine memory over time
+3. Analyzes data of correct/incorrect answers to determine memory trends for users to review
 
 4. Customized reminders: how many times before and how often
 
