@@ -10,7 +10,7 @@ This application is a tool to help people build cognition using a normal part of
 
 * Individuals who have issues with cognition and memory who desire to have stronger mental prowess to remembering things.
 
-  > As someone who finds remembering tasks challenging, I want something to provide me with opportunity to strengthen my memory, so I can stay on top of my life's important events and appointments.
+  > As an elderly person who struggles with remembering, I want something to provide me with opportunity to strengthen my memory so I can stay on top of my life's important events and appointments.
 
 ## Functionality
 
