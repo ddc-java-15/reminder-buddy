@@ -1,3 +1,10 @@
+---
+title: Overview
+description: "Tool that helps people remember their events through cognitive psychology practices for memory."
+menu: Overview
+order: 0
+---
+
 ## Summary
 
 This application is a tool to help people build cognition using a normal part of phone usage. Reminders will be used to build memory by the user creating a flash-card with words, pictures, song, etc... that will assist people in reminding themselves through a connection in the brain.
