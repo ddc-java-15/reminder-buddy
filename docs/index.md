@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: "Tool that helps people remember their events through cognitive psychology practices for memory."
+description: "Helping people remember their events through cognitive psychology tools."
 menu: Overview
 order: 0
 ---
