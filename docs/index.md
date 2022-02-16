@@ -43,7 +43,7 @@ This application is a tool to help people build cognition using a normal part of
 * Establishing time/date information in reminder cards is standard practice!
 * Without this service the app cannot function.
 
-2. <a https://developer.android.com/training/data-storage/shared/media title="Media information from android">Local Gallery</a>
+2. <a href="https://developer.android.com/training/data-storage/shared/media" title="Media information from android">Local Gallery</a>
 * Add an image as a part of a reminder card, it doesn't have to give it away, but it may jog your memory!
 * It's not necessary for the entire function of the app, but it helps!
 
