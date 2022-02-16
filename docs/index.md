@@ -13,11 +13,11 @@ This application is a tool to help people build cognition using a normal part of
 
 * Busy people who have a hard time keeping track of their life events; birthdays, anniversaries, doctors appointments.
 
-  > As a business professional, it can be difficult to remember my personal life events that matter to me. I want my mind to be challenged and keep space saved for things other than my work. So that I will have good work-life balance and better memory.
+  > As a business professional, it can be difficult to remember my personal life events that matter to me. I want my mind to be challenged by relying on clues, pictures, music, photos, and locations to recall an event instead of just being told where to go. If there is mental-space saved for things other than my work, I can achieve good work-life balance and better overall memory.
 
 * Individuals who have issues with cognition and memory who desire to have stronger mental prowess to remembering things.
 
-  > As an elderly person who struggles with remembering, I want something to provide me with opportunity to strengthen my memory so I can stay on top of my life's important events and appointments.
+  > As an elderly person who struggles with remembering, I want something to provide me with opportunity to strengthen my memory to stay on top of my life's important events and appointments.
 
 ## Functionality
 
@@ -39,8 +39,21 @@ This application is a tool to help people build cognition using a normal part of
 
 ## Device/external services
 
-TBD
-Calendar services?
+1. <a href="https://developer.android.com/reference/android/provider/CalendarContract?hl=en" title="Android calender notes">Calendar services</a>
+* Establishing time/date information in reminder cards is standard practice!
+* Without this service the app cannot function.
+
+2. <a https://developer.android.com/training/data-storage/shared/media title="Media information from android">Local Gallery</a>
+* Add an image as a part of a reminder card, it doesn't have to give it away, but it may jog your memory!
+* It's not necessary for the entire function of the app, but it helps!
+
+3. <a href="https://developer.android.com/training/data-storage/shared/media" title="Media information from android">Local sound files</a>
+* Add a song or sound bit to a reminder card to engage the mind in another way.
+* Music and sound won't be necessary, but a notification may go unnoticed!
+
+5. <a href="https://developers.google.com/maps/documentation/urls/android-intents" title="Documentation for android">GPS/Google maps</a>
+* Sometimes it's a location that reminds you of what you need to do, add this to access your spatial memory!
+* Without a location established, it can be more difficult to recall where you are supposed to be, but the app will function without it!
 
 ## Stretch goals/possible enhancements 
 
