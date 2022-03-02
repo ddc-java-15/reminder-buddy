@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import com.google.gson.annotations.Expose;
 import java.util.Date;
 
 @Entity
@@ -14,18 +15,23 @@ public class Card {
   @ColumnInfo(name = "card_id")
   private long id;
 
+  @Expose
   @NonNull
   private long created;
 
+  @Expose
   @NonNull
   private long information;
 
+  @Expose
   @NonNull
   private Date addDate;
 
+  @Expose
   @NonNull
   private String addLocation;
 
+  @Expose
   private long addMusic;
 
   public Card() {

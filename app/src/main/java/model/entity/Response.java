@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import com.google.gson.annotations.Expose;
 import java.util.Date;
 
 @Entity
@@ -13,12 +14,15 @@ public class Response {
   @ColumnInfo(name = "response_id")
   private long id;
 
+  @Expose
   @NonNull
   private String correctReponse;
 
+  @Expose
   @NonNull
   private String incorrectResponse;
 
+  @Expose
   @NonNull
   private Date setNextReminder;
 
