@@ -12,7 +12,7 @@ import java.util.Date;
 public class Card {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "card_id")
+  @ColumnInfo(name = "card_id", index = true)
   private long id;
 
   @Expose
@@ -24,15 +24,18 @@ public class Card {
   private long information;
 
   @Expose
+  @ColumnInfo(name = "add_date")
   @NonNull
   private Date addDate;
 
   @Expose
+  @ColumnInfo(name = "add_location")
   @NonNull
   private String addLocation;
 
   @Expose
-  private long addMusic;
+  @ColumnInfo(name = "add_sound_bite")
+  private long addSoundBite;
 
   public Card() {
   }
@@ -69,11 +72,11 @@ public class Card {
     this.addLocation = String.valueOf(addLocation);
   }
 
-  public long getAddMusic() {
-    return addMusic;
+  public long getAddSoundBite() {
+    return addSoundBite;
   }
 
-  public void setAddMusic(long addMusic) {
-    this.addMusic = addMusic;
+  public void setAddSoundBite(long addSoundBite) {
+    this.addSoundBite = addSoundBite;
   }
 }
