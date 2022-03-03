@@ -77,6 +77,10 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
         );
   }
 
+  public void setCardId (long id) {
+    cardId.setValue(id);
+
+  }
   private void postThrowable(Throwable throwable) {
     Log.e(getClass().getSimpleName(), throwable.getMessage(), throwable);
     this.throwable.postValue(throwable);
