@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey;
 
 @Entity(
     tableName = "user"
-
 )
 public class User {
 

@@ -7,37 +7,55 @@ import edu.cnm.deepdive.reminderbuddy.model.dao.UserDao;
 import edu.cnm.deepdive.reminderbuddy.model.entity.User;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.List;
 
 
 public class UserRepository {
 
-private final Context context;
+  private final Context context;
 
-private final UserDao userDao;
+  private final UserDao userDao;
 
   public UserRepository(Context context) {
     this.context = context;
+    ReminderBuddyDatabase database = ReminderBuddyDatabase.getInstance();
+    userDao = database.getUserDao();
   }
 
-  public UserRepository(UserDao userDao) {
-    this.userDao = userDao;
+  public LiveData<User> get(long id) {
+    return userDao.select(id);
   }
 
-  public LiveData<UserDao> get(long id) {
-    return new LiveData<UserDao>;
+  public LiveData<List<User>> getAll() {
+    return userDao.select();
   }
 
-  public LiveData<List>User>> getAll() {
-
-  }
   public Single<User> save(User user) {
-// Get an instance in insert it into the database.
-    // Using a get, and then insert? Casting?
-    // Using a new instance to save over the current instance?
+    return (
+        (user.getId() == 0)
+            ? userDao
+                .insert(user)
+                .map((id) -> {
+                  user.setId(id);
+                  return user;
+            })
+            : userDao
+                .update(user)
+                .map((count) -> user)
+    )
+        .subscribeOn(Schedulers.io());
   }
 
   public Completable delete(User user) {
 
+    return (
+        (user.getId() == 0)
+            ? Completable.complete()
+            : userDao
+                .delete(user)
+                .ignoreElement()
+    )
+        .subscribeOn(Schedulers.io());
   }
 }
