@@ -1,11 +1,10 @@
-package model.entity;
+package edu.cnm.deepdive.reminderbuddy.model.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
-import com.google.gson.annotations.Expose;
 import java.util.Date;
 
 @Entity(
@@ -32,11 +31,9 @@ public class Response {
   private long id;
 
   @ColumnInfo(name = "correct_response")
-  @NonNull
   private String correctResponse;
 
   @ColumnInfo(name = "incorrect_response")
-  @NonNull
   private String incorrectResponse;
 
   @ColumnInfo(name = "next_reminder")
@@ -88,5 +85,13 @@ public class Response {
 
   public void setCardId(long cardId) {
     this.cardId = cardId;
+  }
+
+  public long getNotificationId() {
+    return notificationId;
+  }
+
+  public void setNotificationId(long notificationId) {
+    this.notificationId = notificationId;
   }
 }

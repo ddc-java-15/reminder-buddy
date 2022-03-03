@@ -2,6 +2,8 @@ package edu.cnm.deepdive.reminderbuddy;
 
 import android.app.Application;
 import com.facebook.stetho.Stetho;
+import edu.cnm.deepdive.reminderbuddy.service.ReminderBuddyDatabase;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * Initializes (in the {@link #onCreate()} method) application-level resources. This class
@@ -14,6 +16,13 @@ public class ReminderBuddyApplication extends Application {
   public void onCreate() {
     super.onCreate();
     Stetho.initializeWithDefaults(this);
+    ReminderBuddyDatabase.setContext(this);
+    ReminderBuddyDatabase
+        .getInstance()
+        .getUserDao()
+        .delete()
+        .subscribeOn(Schedulers.io())
+        .subscribe();
   }
 
 }
