@@ -11,12 +11,55 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/half_dynamic_spacing">
 
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Do I function"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"/>
+    <ImageButton
+      android:id="@+id/save"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/half_dynamic_spacing"
+      android:src="@drawable/ic_check"
+      android:background="?android:selectableItemBackgroundBorderless"
+      android:tint="#ff00A000"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:contentDescription="@string/save_label"
+      android:tooltipText="@string/save_label"/>
+
+    <ImageButton
+      android:id="@+id/cancel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/half_dynamic_spacing"
+      android:src="@drawable/ic_close"
+      android:background="?android:selectableItemBackgroundBorderless"
+      android:tint="#ffff0000"
+      app:layout_constraintTop_toBottomOf="@id/save"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:contentDescription="@string/cancel_label"
+      android:tooltipText="@string/cancel_label"/>
+
+<!--    TODO Add objects for the required properties of a card-->
+
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/information_layout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      app:hintEnabled="true"
+      app:hintAnimationEnabled="true"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/save">
+
+      <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:maxLines="3"
+        android:hint="@string/information_label"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

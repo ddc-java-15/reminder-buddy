@@ -32,7 +32,13 @@ public class CardDetailsFragment extends BottomSheetDialogFragment {
       Bundle savedInstanceState) {
     super.onCreateView(inflater, container, savedInstanceState);
     binding = FragmentCardDetailsBinding.inflate(inflater, container, false);
-    // TODO Attach listeners to controls
+    binding.save.setOnClickListener((v) -> {
+      // TODO Set properties of card from data entry objects
+
+      viewModel.save(card);
+      dismiss();
+    });
+    binding.cancel.setOnClickListener((v) -> dismiss());
     return binding.getRoot();
   }
 
@@ -46,7 +52,7 @@ public class CardDetailsFragment extends BottomSheetDialogFragment {
         .observe(getViewLifecycleOwner(), (card) -> {
           // TODO Populate view objects
         });
-    if (cardId == 0) {
+    if (cardId != 0) {
       viewModel.setCardId(cardId);
     } else {
       card = new Card();
