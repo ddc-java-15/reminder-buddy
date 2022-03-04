@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b687e41b213a926e0206156fc234d695",
+    "identityHash": "ff2264e12742dd5f7f73db00befe77db",
     "entities": [
       {
         "tableName": "user",
@@ -92,7 +92,7 @@
       },
       {
         "tableName": "card",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`card_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `information` TEXT, `date` INTEGER NOT NULL, `location` TEXT, `sound_bite` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`card_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `information` TEXT, `date` INTEGER NOT NULL, `location` TEXT, `sound_bite` TEXT, `hint` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -127,6 +127,12 @@
           {
             "fieldPath": "soundBite",
             "columnName": "sound_bite",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hint",
+            "columnName": "hint",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -236,7 +242,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b687e41b213a926e0206156fc234d695')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ff2264e12742dd5f7f73db00befe77db')"
     ]
   }
 }

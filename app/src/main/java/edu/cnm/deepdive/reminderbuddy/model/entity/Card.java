@@ -32,6 +32,8 @@ public class Card {
   @ColumnInfo(name = "sound_bite")
   private String soundBite;
 
+  private String hint;
+
   public long getId() {
     return id;
   }
@@ -80,5 +82,13 @@ public class Card {
 
   public void setSoundBite(String soundBite) {
     this.soundBite = soundBite;
+  }
+
+  public String getHint() {
+    return hint;
+  }
+
+  public void setHint(String hint) {
+    this.hint = hint;
   }
 }

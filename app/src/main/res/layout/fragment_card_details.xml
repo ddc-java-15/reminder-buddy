@@ -41,6 +41,7 @@
 
 
 
+
     <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/information_layout"
       android:layout_width="0dp"
@@ -51,7 +52,6 @@
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@id/save">
-
       <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/information"
         android:layout_width="match_parent"
@@ -60,11 +60,10 @@
         android:minLines="3"
         android:maxLines="3"
         android:hint="@string/information_label"/>
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/location_layout"
+      android:id="@+id/hint_layout"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
@@ -73,21 +72,55 @@
       app:layout_constraintTop_toBottomOf="@id/information_layout"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@id/save">
+      <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="@string/hint_label"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
+
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/location_layout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      app:hintEnabled="true"
+      app:hintAnimationEnabled="true"
+      app:layout_constraintTop_toBottomOf="@id/hint_layout"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/save">
       <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:hint="@string/location_label"/>
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <DatePicker
+      android:id="@+id/date"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
       android:hint="@string/calendar_label"
-      app:layout_constraintTop_toBottomOf="@+id/location_layout"/>
+      android:datePickerMode="spinner"
+      android:calendarViewShown="false"
+
+      app:layout_constraintTop_toBottomOf="@id/location_layout"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--
+    <Button
+      android:id="@+id/save_for_later"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      tools:layout_editor_absoluteX="16dp"
+      tools:layout_editor_absoluteY="521dp"/>
+-->
 
 
   </androidx.constraintlayout.widget.ConstraintLayout>

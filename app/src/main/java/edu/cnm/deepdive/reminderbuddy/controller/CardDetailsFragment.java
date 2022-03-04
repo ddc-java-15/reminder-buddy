@@ -11,6 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import edu.cnm.deepdive.reminderbuddy.databinding.FragmentCardDetailsBinding;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
 import edu.cnm.deepdive.reminderbuddy.viewmodel.CardViewModel;
+import java.util.Calendar;
 
 public class CardDetailsFragment extends BottomSheetDialogFragment {
 
@@ -33,8 +34,12 @@ public class CardDetailsFragment extends BottomSheetDialogFragment {
     super.onCreateView(inflater, container, savedInstanceState);
     binding = FragmentCardDetailsBinding.inflate(inflater, container, false);
     binding.save.setOnClickListener((v) -> {
-      // TODO Set properties of card from data entry objects
-
+      card.setInformation(binding.information.getText().toString().trim());
+      card.setLocation(binding.location.getText().toString().trim());
+      card.setHint(binding.hint.getText().toString().trim());
+      Calendar calendar = Calendar.getInstance();
+      calendar.set(binding.date.getYear(), binding.date.getMonth(), binding.date.getDayOfMonth());
+      card.setDate(calendar.getTime());
       viewModel.save(card);
       dismiss();
     });
