@@ -39,6 +39,8 @@
 
 <!--    TODO Add objects for the required properties of a card-->
 
+
+
     <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/information_layout"
       android:layout_width="0dp"
@@ -60,6 +62,33 @@
         android:hint="@string/information_label"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/location_layout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      app:hintEnabled="true"
+      app:hintAnimationEnabled="true"
+      app:layout_constraintTop_toBottomOf="@id/information_layout"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/save">
+
+      <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="@string/location_label"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <DatePicker
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:hint="@string/calendar_label"
+      app:layout_constraintTop_toBottomOf="@+id/location_layout"/>
+
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
