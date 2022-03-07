@@ -59,7 +59,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
 
     // Fragment & navigation framework libraries
-    implementation 'androidx.fragment:fragment:1.4.0'
+    implementation 'androidx.fragment:fragment:1.4.1'
     implementation "androidx.navigation:navigation-fragment:$navigationVersion"
     implementation "androidx.navigation:navigation-ui:$navigationVersion"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

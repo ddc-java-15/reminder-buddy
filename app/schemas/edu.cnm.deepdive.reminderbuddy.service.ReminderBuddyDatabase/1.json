@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ff2264e12742dd5f7f73db00befe77db",
+    "identityHash": "df3f86b90f3374981bb3803130755339",
     "entities": [
       {
         "tableName": "user",
@@ -32,7 +32,7 @@
       },
       {
         "tableName": "notification",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`notification_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `card_id` INTEGER NOT NULL, `frequency` INTEGER, `soundbite` TEXT, FOREIGN KEY(`card_id`) REFERENCES `card`(`card_id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`notification_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `card_id` INTEGER NOT NULL, `frequency` INTEGER, `soundbite` TEXT, `hint` TEXT, FOREIGN KEY(`card_id`) REFERENCES `card`(`card_id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
         "fields": [
           {
             "fieldPath": "id",
@@ -55,6 +55,12 @@
           {
             "fieldPath": "soundbite",
             "columnName": "soundbite",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hint",
+            "columnName": "hint",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -242,7 +248,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ff2264e12742dd5f7f73db00befe77db')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'df3f86b90f3374981bb3803130755339')"
     ]
   }
 }

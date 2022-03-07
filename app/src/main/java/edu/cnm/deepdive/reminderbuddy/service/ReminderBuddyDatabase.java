@@ -85,4 +85,5 @@ public abstract class ReminderBuddyDatabase extends RoomDatabase {
       return (value != null) ? new Date(value) : null ;
     }
   }
+
 }
