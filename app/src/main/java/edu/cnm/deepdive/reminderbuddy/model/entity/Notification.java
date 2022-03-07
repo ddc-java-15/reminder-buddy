@@ -30,6 +30,8 @@ public class Notification {
 
   private String soundbite;
 
+  private String hint;
+
   public long getCardId() {
     return cardId;
   }
@@ -60,5 +62,13 @@ public class Notification {
 
   public void setSoundbite(String soundbite) {
     this.soundbite = soundbite;
+  }
+
+  public String getHint() {
+    return hint;
+  }
+
+  public void setHint(String hint) {
+    this.hint = hint;
   }
 }
