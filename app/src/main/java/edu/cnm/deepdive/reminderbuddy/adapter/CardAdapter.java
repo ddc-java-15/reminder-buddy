@@ -1,10 +1,17 @@
 package edu.cnm.deepdive.reminderbuddy.adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.timepicker.TimeFormat;
+import edu.cnm.deepdive.reminderbuddy.R;
 import edu.cnm.deepdive.reminderbuddy.adapter.CardAdapter.Holder;
 import edu.cnm.deepdive.reminderbuddy.databinding.ItemCardBinding;
+import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
+import java.text.DateFormat;
+import java.util.List;
 
 public class CardAdapter extends RecyclerView.Adapter<Holder> {
   // TODO Declare fields for a layout inflater, date format, and a list of card
@@ -12,6 +19,57 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
   // TODO Define a constructor that takes a context and a list of card as parameters; populate list
   //  of card field from parameter; populate the layout inflater using the context; populate the
   //  date format using the context.
+
+  public CardAdapter(Context context, LayoutInflater inflater,
+      DateFormat dateFormat,
+      List<Card> cards) {
+    this.context = context;
+    this.cards = cards;
+    this.inflater = LayoutInflater.from(context);
+    this.dateFormat = android.text.format.DateFormat.getDateFormat(context);
+    timeFormat = android.text.format.TimeFormat.getTimeFormat(context);
+    durationFormat = context.getString(R.string.mmss_format);
+    dateTimeOrderFormat = context.getString(R.string.date_time_order_format);
+  }
+
+  private final Context context;
+  private final LayoutInflater inflater;
+  private final DateFormat dateFormat;
+  private final TimeFormat timeFormat;
+  private final List<Card> cards;
+  private final String dateTimeOrderFormat;
+  private final String durationFormat;
+
+  
+  public Context getContext() {
+    return context;
+  }
+
+  public LayoutInflater getInflater() {
+    return inflater;
+  }
+
+  public DateFormat getDateFormat() {
+    return dateFormat;
+  }
+
+  public TimeFormat getTimeFormat() {
+    return timeFormat;
+  }
+
+  public List<Card> getCards() {
+    return cards;
+  }
+
+  public String getDateTimeOrderFormat() {
+    return dateTimeOrderFormat;
+  }
+
+  public String getDurationFormat() {
+    return durationFormat;
+  }
+
+
   @NonNull
   @Override
   public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,6 +85,8 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
   public int getItemCount() {
     return 0; // TODO
   }
+
+
 
   class Holder extends RecyclerView.ViewHolder {
 

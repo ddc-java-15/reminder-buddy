@@ -9,4 +9,7 @@
   <string name="location_label">Location</string>
   <string name="calendar_label">Calendar</string>
   <string name="hint_label">Hint to display</string>
+  <string name="mmss_format">%1$02d:%2$02d</string>
+  <string name="date_time_order_format">%1$s %2$s</string>
+
 </resources>
