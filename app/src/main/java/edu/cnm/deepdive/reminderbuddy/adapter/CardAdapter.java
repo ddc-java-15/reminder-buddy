@@ -27,7 +27,7 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
     this.cards = cards;
     this.inflater = LayoutInflater.from(context);
     this.dateFormat = android.text.format.DateFormat.getDateFormat(context);
-    timeFormat = android.text.format.TimeFormat.getTimeFormat(context);
+//    timeFormat = android.text.format.TimeFormat.getTimeFormat(context);
     durationFormat = context.getString(R.string.mmss_format);
     dateTimeOrderFormat = context.getString(R.string.date_time_order_format);
   }
@@ -35,7 +35,7 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
   private final Context context;
   private final LayoutInflater inflater;
   private final DateFormat dateFormat;
-  private final TimeFormat timeFormat;
+//  private final TimeFormat timeFormat;
   private final List<Card> cards;
   private final String dateTimeOrderFormat;
   private final String durationFormat;
@@ -53,9 +53,9 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
     return dateFormat;
   }
 
-  public TimeFormat getTimeFormat() {
-    return timeFormat;
-  }
+//  public TimeFormat getTimeFormat() {
+//    return timeFormat;
+//  }
 
   public List<Card> getCards() {
     return cards;
