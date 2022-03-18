@@ -8,9 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.snackbar.Snackbar;
-import edu.cnm.deepdive.codebreaker.R;
-import edu.cnm.deepdive.codebreaker.databinding.ActivityLoginBinding;
-import edu.cnm.deepdive.codebreaker.viewmodel.LoginViewModel;
 import edu.cnm.deepdive.reminderbuddy.R;
 import edu.cnm.deepdive.reminderbuddy.databinding.ActivityLoginBinding;
 import edu.cnm.deepdive.reminderbuddy.viewmodel.LoginViewModel;
@@ -35,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
     viewModel
         .getThrowable()
         .observe(this, (this::informFailure));
+    setContentView(R.layout.activity_login);
   }
-
 
   private void handleAccount(GoogleSignInAccount account) {
     if(account != null) {

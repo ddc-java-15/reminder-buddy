@@ -11,6 +11,10 @@
   <string name="hint_label">Hint to display</string>
   <string name="mmss_format">%1$02d:%2$02d</string>
   <string name="date_time_order_format">%1$s %2$s</string>
+  <string name="login_failure_message">Unable to sign in with provided credentials.</string>
+  <string name="display_name_format">Signed in as %s</string>
+  <string name="sign_out">Sign out</string>
+
 
   <string name="login_failure_message">Unable to sign in with provided credentials.</string>
   <string name="display_name_format">Signed in as %s</string>

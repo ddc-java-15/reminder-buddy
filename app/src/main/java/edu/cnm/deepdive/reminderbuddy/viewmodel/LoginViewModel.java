@@ -33,7 +33,6 @@ public class LoginViewModel extends AndroidViewModel implements DefaultLifecycle
     refresh();
   }
 
-
   public LiveData<GoogleSignInAccount> getAccount() {
     return account;
   }

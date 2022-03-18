@@ -2,6 +2,7 @@ package edu.cnm.deepdive.reminderbuddy;
 
 import android.app.Application;
 import com.facebook.stetho.Stetho;
+import edu.cnm.deepdive.reminderbuddy.service.GoogleSignInService;
 import edu.cnm.deepdive.reminderbuddy.service.ReminderBuddyDatabase;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
@@ -15,6 +16,7 @@ public class ReminderBuddyApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+    GoogleSignInService.setContext(this);
     Stetho.initializeWithDefaults(this);
     ReminderBuddyDatabase.setContext(this);
     ReminderBuddyDatabase

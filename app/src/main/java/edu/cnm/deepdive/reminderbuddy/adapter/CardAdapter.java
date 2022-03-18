@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.material.timepicker.TimeFormat;
 import edu.cnm.deepdive.reminderbuddy.R;
 import edu.cnm.deepdive.reminderbuddy.adapter.CardAdapter.Holder;
 import edu.cnm.deepdive.reminderbuddy.databinding.ItemCardBinding;
@@ -20,53 +19,23 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
   //  of card field from parameter; populate the layout inflater using the context; populate the
   //  date format using the context.
 
-  public CardAdapter(Context context, LayoutInflater inflater,
-      DateFormat dateFormat,
-      List<Card> cards) {
-    this.context = context;
-    this.cards = cards;
-    this.inflater = LayoutInflater.from(context);
-    this.dateFormat = android.text.format.DateFormat.getDateFormat(context);
-//    timeFormat = android.text.format.TimeFormat.getTimeFormat(context);
-    durationFormat = context.getString(R.string.mmss_format);
-    dateTimeOrderFormat = context.getString(R.string.date_time_order_format);
-  }
 
   private final Context context;
   private final LayoutInflater inflater;
   private final DateFormat dateFormat;
-//  private final TimeFormat timeFormat;
+  private final DateFormat timeFormat;
   private final List<Card> cards;
   private final String dateTimeOrderFormat;
   private final String durationFormat;
 
-  
-  public Context getContext() {
-    return context;
-  }
-
-  public LayoutInflater getInflater() {
-    return inflater;
-  }
-
-  public DateFormat getDateFormat() {
-    return dateFormat;
-  }
-
-//  public TimeFormat getTimeFormat() {
-//    return timeFormat;
-//  }
-
-  public List<Card> getCards() {
-    return cards;
-  }
-
-  public String getDateTimeOrderFormat() {
-    return dateTimeOrderFormat;
-  }
-
-  public String getDurationFormat() {
-    return durationFormat;
+  public CardAdapter(Context context, LayoutInflater inflater, List<Card> cards) {
+    this.context = context;
+    this.cards = cards;
+    this.inflater = LayoutInflater.from(context);
+    this.dateFormat = android.text.format.DateFormat.getDateFormat(context);
+    timeFormat = android.text.format.DateFormat.getTimeFormat(context);
+    durationFormat = context.getString(R.string.mmss_format);
+    dateTimeOrderFormat = context.getString(R.string.date_time_order_format);
   }
 
 
