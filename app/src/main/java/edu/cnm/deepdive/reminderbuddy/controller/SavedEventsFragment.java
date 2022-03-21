@@ -1,5 +1,7 @@
 package edu.cnm.deepdive.reminderbuddy.controller;
 
-public class SavedEventsFragment {
+import androidx.fragment.app.Fragment;
+
+public class SavedEventsFragment extends Fragment {
 
 }

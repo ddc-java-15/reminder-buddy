@@ -10,6 +10,8 @@
     android:name="edu.cnm.deepdive.reminderbuddy.controller.HomeFragment"
     tools:layout="@layout/fragment_home"
     >
+
+
   <action
     android:id="@+id/open_details"
     app:destination="@id/navigation_card_details">
@@ -20,6 +22,11 @@
       android:defaultValue="0L"/>
   </action>
 </fragment>
+
+  <fragment
+  android:id="@+id/navigation_reminder"
+  android:name="edu.cnm.deepdive.reminderbuddy.controller.ReminderFragment"
+  tools:layout="@layout/fragment_reminder"/>
 
   <dialog
     android:id="@+id/navigation_card_details"

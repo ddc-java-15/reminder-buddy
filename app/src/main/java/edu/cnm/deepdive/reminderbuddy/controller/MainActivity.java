@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import edu.cnm.deepdive.reminderbuddy.R;
 import edu.cnm.deepdive.reminderbuddy.databinding.ActivityMainBinding;
 import edu.cnm.deepdive.reminderbuddy.viewmodel.CardViewModel;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
   private ActivityMainBinding binding;
   private CardViewModel viewModel;
   private LoginViewModel loginViewModel;
+  private AppBarConfiguration appBarConfiguration;
 
 
   @Override
@@ -31,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     NavController navController = ((NavHostFragment)getSupportFragmentManager()
         .findFragmentById(R.id.nav_host_fragment))
         .getNavController();
+    appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_reminder)
+        .build();
+    NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    NavigationUI.setupWithNavController(binding.navView, navController);
     loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
     loginViewModel
         .getAccount()
