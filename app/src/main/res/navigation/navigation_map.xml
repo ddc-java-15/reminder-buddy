@@ -36,5 +36,25 @@
       android:name="card_id"
       app:argType="long"
       android:defaultValue="0L"/>
+
+    <action
+      android:id="@+id/open_date_picker"
+      app:destination="@id/navigation_date_picker">
+
+      <argument
+        android:name="date"
+        app:argType="java.util.Calendar"/>
+    </action>
   </dialog>
+
+  <dialog
+    android:id="@+id/navigation_date_picker"
+    android:name="edu.cnm.deepdive.reminderbuddy.controller.DatePickerDialogFragment">
+
+    <argument
+      android:name="date"
+      app:argType="java.util.Calendar"/>
+
+  </dialog>
+
 </navigation>

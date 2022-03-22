@@ -37,18 +37,19 @@
       android:contentDescription="@string/cancel_label"
       android:tooltipText="@string/cancel_label"/>
 
-<!--    TODO Add objects for the required properties of a card-->
+    <!--    TODO Add objects for the required properties of a card-->
 
 
-<TextView
-  android:id="@+id/action_title"
-  android:layout_width="0dp"
-  android:layout_height="wrap_content"
-  android:layout_margin="@dimen/half_dynamic_spacing"
-  app:layout_constraintTop_toTopOf="parent"
-  app:layout_constraintBottom_toTopOf="@id/information_layout"
-  android:text="Card Creation"
-  />
+    <TextView
+      android:id="@+id/action_title"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      style="@style/TextAppearance.MaterialComponents.Headline6"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      android:text="Event Details"
+      />
 
     <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/information_layout"
@@ -65,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
-        android:minLines="3"
+        android:minLines="1"
         android:maxLines="3"
         android:hint="@string/information_label"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -107,8 +108,53 @@
         android:hint="@string/location_label"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/date_layout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      app:hintEnabled="true"
+      app:hintAnimationEnabled="true"
+      app:layout_constraintTop_toBottomOf="@id/location_layout"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/time_layout"
+      app:layout_constraintHorizontal_weight="1">
+
+      <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:hint="@string/event_date_label"
+        android:editable="false"
+        android:focusable="false"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_baseline_today_24"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/time_layout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      app:hintEnabled="true"
+      app:hintAnimationEnabled="true"
+      app:layout_constraintTop_toBottomOf="@id/location_layout"
+      app:layout_constraintStart_toEndOf="@id/date_layout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_weight="1">
+
+      <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:hint="@string/event_time_label"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--
     <DatePicker
-      android:id="@+id/date"
+      android:id="@+id/date_picker"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
@@ -119,16 +165,17 @@
       app:layout_constraintTop_toBottomOf="@id/location_layout"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"/>
-
-<!--
-    <Button
-      android:id="@+id/save_for_later"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_margin="@dimen/half_dynamic_spacing"
-      tools:layout_editor_absoluteX="16dp"
-      tools:layout_editor_absoluteY="521dp"/>
 -->
+
+    <!--
+        <Button
+          android:id="@+id/save_for_later"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/half_dynamic_spacing"
+          tools:layout_editor_absoluteX="16dp"
+          tools:layout_editor_absoluteY="521dp"/>
+    -->
 
 
   </androidx.constraintlayout.widget.ConstraintLayout>
