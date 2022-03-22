@@ -3,8 +3,6 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="edu.cnm.deepdive.reminderbuddy">
 
-  <uses-permission android:name="android.permission.INTERNET"/>
-
   <application
     android:allowBackup="false"
     android:icon="@mipmap/ic_launcher"
@@ -14,21 +12,19 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="AllowBackup">
-
-    <activity
-      android:name=".controller.MainActivity">
+    <activity android:name=".controller.MainActivity">
     </activity>
-
-    <activity android:name=".controller.LoginActivity"
-      android:exported="true">
-
+    <activity
+      android:exported="true"
+      android:name=".controller.LoginActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
-
     </activity>
   </application>
+
+  <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

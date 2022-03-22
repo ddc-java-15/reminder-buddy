@@ -40,7 +40,15 @@
 <!--    TODO Add objects for the required properties of a card-->
 
 
-
+<TextView
+  android:id="@+id/action_title"
+  android:layout_width="0dp"
+  android:layout_height="wrap_content"
+  android:layout_margin="@dimen/half_dynamic_spacing"
+  app:layout_constraintTop_toTopOf="parent"
+  app:layout_constraintBottom_toTopOf="@id/information_layout"
+  android:text="Card Creation"
+  />
 
     <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/information_layout"
@@ -49,7 +57,7 @@
       android:layout_margin="@dimen/half_dynamic_spacing"
       app:hintEnabled="true"
       app:hintAnimationEnabled="true"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/action_title"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@id/save">
       <com.google.android.material.textfield.TextInputEditText

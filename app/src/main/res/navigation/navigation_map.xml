@@ -8,8 +8,7 @@
   <fragment
     android:id="@+id/navigation_home"
     android:name="edu.cnm.deepdive.reminderbuddy.controller.HomeFragment"
-    tools:layout="@layout/fragment_home"
-    >
+    tools:layout="@layout/fragment_home">
 
 
   <action

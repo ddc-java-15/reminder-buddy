@@ -69,6 +69,7 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
     private void bind(int position) {
       // TODO Retrieve Card at position from list.
       // TODO Populate view objects in binding with property values from card.
+      Card item = cards.get(position);
     }
 
   }
