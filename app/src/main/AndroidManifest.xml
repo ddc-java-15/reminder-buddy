@@ -3,6 +3,11 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="edu.cnm.deepdive.reminderbuddy">
 
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.READ_CALENDAR"/>
+  <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+
   <application
     android:allowBackup="false"
     android:icon="@mipmap/ic_launcher"
@@ -25,6 +30,5 @@
     </activity>
   </application>
 
-  <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

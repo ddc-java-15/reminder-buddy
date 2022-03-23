@@ -28,7 +28,7 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
   private final String dateTimeOrderFormat;
   private final String durationFormat;
 
-  public CardAdapter(Context context, LayoutInflater inflater, List<Card> cards) {
+  public CardAdapter(Context context, List<Card> cards) {
     this.context = context;
     this.cards = cards;
     this.inflater = LayoutInflater.from(context);
@@ -42,7 +42,8 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
   @NonNull
   @Override
   public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    return null; // TODO
+    ItemCardBinding binding = ItemCardBinding.inflate(inflater, parent, false);
+    return new Holder(binding);
   }
 
   @Override
@@ -52,7 +53,7 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
 
   @Override
   public int getItemCount() {
-    return 0; // TODO
+    return cards.size();
   }
 
 
@@ -70,6 +71,10 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
       // TODO Retrieve Card at position from list.
       // TODO Populate view objects in binding with property values from card.
       Card item = cards.get(position);
+      binding.date.setText(item.getDate().toString());
+      binding.information.setText(item.getInformation().toString());
+      binding.location.setText(item.getLocation().toString());
+
     }
 
   }
