@@ -26,6 +26,10 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
 
   private final MutableLiveData<Long> cardId;
 
+  private final MutableLiveData<Long> userId;
+
+  private final LiveData<List<Card>> cards;
+
   private final CompositeDisposable pending;
 
 
@@ -36,6 +40,7 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
     cardId = new MutableLiveData<>();
     card = Transformations.switchMap(cardId, repository::get);
     throwable = new MutableLiveData<>();
+    cards = Transformations.switchMap(userId, (id) -> repository.getAllByUser(id));
     pending = new CompositeDisposable();
   }
 
@@ -54,7 +59,11 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
   }
 
   public LiveData<List<Card>> getCards() {
-    return repository.getAll();
+    return cards;
+  }
+
+  public void setUserId (long userId) {
+    this.userId.setValue(userId);
   }
 
   public void save(Card card) {

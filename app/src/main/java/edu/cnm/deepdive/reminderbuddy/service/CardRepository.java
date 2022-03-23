@@ -31,6 +31,10 @@ public class CardRepository {
     return cardDao.select();
   }
 
+  public LiveData<List<Card>> getAllByUser(long userId) {
+    return cardDao;
+  }
+
   public Single<Card> save(Card card) {
     return (
         (card.getId() == 0)

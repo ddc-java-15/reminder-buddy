@@ -48,4 +48,6 @@ public interface CardDao {
   @Query("SELECT * FROM card ORDER BY card_id ASC")
   LiveData<List<Card>> select();
 
+  @Query("SELECT * FROM card WHERE user_id = :userId ORDER BY card_id ASC")
+  LiveData<List<Card>> selectByUser(long userId);
 }

@@ -2,17 +2,23 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "df3f86b90f3374981bb3803130755339",
+    "identityHash": "132a2ea572617926d974dba3ef443f68",
     "entities": [
       {
         "tableName": "user",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `age` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `oauth_key` TEXT, `age` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "user_id",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "oauthKey",
+            "columnName": "oauth_key",
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "age",
@@ -27,7 +33,17 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_user_oauth_key",
+            "unique": true,
+            "columnNames": [
+              "oauth_key"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_user_oauth_key` ON `${TABLE_NAME}` (`oauth_key`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -248,7 +264,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'df3f86b90f3374981bb3803130755339')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '132a2ea572617926d974dba3ef443f68')"
     ]
   }
 }
