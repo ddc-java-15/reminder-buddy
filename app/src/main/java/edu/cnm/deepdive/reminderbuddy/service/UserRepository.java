@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.reminderbuddy.service;
 
 import android.content.Context;
+import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -8,6 +9,7 @@ import edu.cnm.deepdive.reminderbuddy.model.dao.UserDao;
 import edu.cnm.deepdive.reminderbuddy.model.entity.User;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
+import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.List;
 
@@ -29,7 +31,11 @@ public class UserRepository {
     userDao = database.getUserDao();
     signInService = GoogleSignInService.getInstance();
     user = new MutableLiveData<>();
-    getOrCreate().subscribe();
+    getOrCreate()
+        .subscribe(
+            this.user::postValue,
+            (throwable) -> Log.e(getClass().getSimpleName(), throwable.getMessage(), throwable)
+        );
   }
 
   public LiveData<User> getUser() {
@@ -87,7 +93,6 @@ public class UserRepository {
                         .flatMap(this::save)
                 )
             )
-        .doOnSuccess(this.user::postValue)
         .subscribeOn(Schedulers.io());
 
 

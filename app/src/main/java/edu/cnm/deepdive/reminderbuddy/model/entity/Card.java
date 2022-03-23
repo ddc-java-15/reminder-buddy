@@ -4,12 +4,19 @@ package edu.cnm.deepdive.reminderbuddy.model.entity;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 import com.google.gson.annotations.Expose;
 import java.util.Date;
 
 @Entity(
-    tableName = "card"
+    tableName = "card",
+    foreignKeys = @ForeignKey(
+        entity = User.class,
+        childColumns = "user_id",
+        parentColumns = "user_id",
+        onDelete = ForeignKey.CASCADE
+    )
 
 )
 public class Card {
@@ -18,6 +25,8 @@ public class Card {
   @ColumnInfo(name = "card_id")
   private long id;
 
+  @ColumnInfo(name = "user_id", index = true)
+  private long userId;
 
   @NonNull
   private Date created = new Date();
@@ -25,7 +34,7 @@ public class Card {
   private String information;
 
   @NonNull
-  private Date date;
+  private Date date = new Date();
 
   private String location;
 
@@ -40,6 +49,14 @@ public class Card {
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
   }
 
   @NonNull

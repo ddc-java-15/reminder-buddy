@@ -32,7 +32,8 @@
   <string name="attachment_summary_off">Only download attachments when manually requested</string>
   <string name="title_activity_fragment_preferences.xml">fragment_preferences.xml</string>
   <string name="event_date_label">Date of event</string>
-  <string name="event_time_label">Time of event.</string>
+  <string name="event_time_label">Time of event</string>
+  <string name="event_details_title">Event Details</string>
 
 
 </resources>

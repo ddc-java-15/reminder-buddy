@@ -11,21 +11,21 @@
     tools:layout="@layout/fragment_home">
 
 
-  <action
-    android:id="@+id/open_details"
-    app:destination="@id/navigation_card_details">
+    <action
+      android:id="@+id/open_details"
+      app:destination="@id/navigation_card_details">
 
-    <argument
-      android:name="card_id"
-      app:argType="long"
-      android:defaultValue="0L"/>
-  </action>
-</fragment>
+      <argument
+        android:name="card_id"
+        app:argType="long"
+        android:defaultValue="0L"/>
+    </action>
+  </fragment>
 
   <fragment
-  android:id="@+id/navigation_reminder"
-  android:name="edu.cnm.deepdive.reminderbuddy.controller.ReminderFragment"
-  tools:layout="@layout/fragment_reminder"/>
+    android:id="@+id/navigation_reminder"
+    android:name="edu.cnm.deepdive.reminderbuddy.controller.ReminderFragment"
+    tools:layout="@layout/fragment_reminder"/>
 
   <dialog
     android:id="@+id/navigation_card_details"
@@ -45,11 +45,30 @@
         android:name="date"
         app:argType="java.util.Calendar"/>
     </action>
+    <action
+      android:id="@+id/open_time_picker"
+      app:destination="@id/navigation_time_picker">
+
+      <argument
+        android:name="date"
+        app:argType="java.util.Calendar"/>
+    </action>
+
   </dialog>
 
   <dialog
     android:id="@+id/navigation_date_picker"
     android:name="edu.cnm.deepdive.reminderbuddy.controller.DatePickerDialogFragment">
+
+    <argument
+      android:name="date"
+      app:argType="java.util.Calendar"/>
+
+  </dialog>
+
+  <dialog
+    android:id="@+id/navigation_time_picker"
+    android:name="edu.cnm.deepdive.reminderbuddy.controller.TimePickerDialogFragment">
 
     <argument
       android:name="date"

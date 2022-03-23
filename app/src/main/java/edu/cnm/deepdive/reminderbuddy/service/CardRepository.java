@@ -3,9 +3,7 @@ package edu.cnm.deepdive.reminderbuddy.service;
 import android.content.Context;
 import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.reminderbuddy.model.dao.CardDao;
-import edu.cnm.deepdive.reminderbuddy.model.dao.UserDao;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
-import edu.cnm.deepdive.reminderbuddy.model.entity.User;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -32,7 +30,7 @@ public class CardRepository {
   }
 
   public LiveData<List<Card>> getAllByUser(long userId) {
-    return cardDao;
+    return (cardDao.selectByUser(userId));
   }
 
   public Single<Card> save(Card card) {

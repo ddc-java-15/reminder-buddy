@@ -12,10 +12,12 @@ import androidx.navigation.Navigation;
 import edu.cnm.deepdive.reminderbuddy.adapter.CardAdapter;
 import edu.cnm.deepdive.reminderbuddy.databinding.FragmentHomeBinding;
 import edu.cnm.deepdive.reminderbuddy.viewmodel.CardViewModel;
+import edu.cnm.deepdive.reminderbuddy.viewmodel.LoginViewModel;
 
 public class HomeFragment extends Fragment {
 
-  private CardViewModel viewModel;
+  private CardViewModel cardViewModel;
+  private LoginViewModel loginViewModel;
   private FragmentHomeBinding binding;
 
   @Nullable
@@ -29,14 +31,18 @@ public class HomeFragment extends Fragment {
           .findNavController(binding.getRoot())
           .navigate(HomeFragmentDirections.openDetails());
     });
-  return binding.getRoot();
+    return binding.getRoot();
   }
 
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    viewModel = new ViewModelProvider(this).get(CardViewModel.class);
-    viewModel
+    loginViewModel = new ViewModelProvider(getActivity()).get(LoginViewModel.class);
+    cardViewModel = new ViewModelProvider(this).get(CardViewModel.class);
+    loginViewModel
+        .getUser()
+        .observe(getViewLifecycleOwner(), (user) -> cardViewModel.setUserId(user.getId()));
+    cardViewModel
         .getCards()
         .observe(getViewLifecycleOwner(), (cards) -> {
           CardAdapter adapter = new CardAdapter(getContext(), cards);

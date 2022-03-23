@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "132a2ea572617926d974dba3ef443f68",
+    "identityHash": "9b1c3ff52bc3469805a947110ac34dba",
     "entities": [
       {
         "tableName": "user",
@@ -114,11 +114,17 @@
       },
       {
         "tableName": "card",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`card_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `information` TEXT, `date` INTEGER NOT NULL, `location` TEXT, `sound_bite` TEXT, `hint` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`card_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_id` INTEGER NOT NULL, `created` INTEGER NOT NULL, `information` TEXT, `date` INTEGER NOT NULL, `location` TEXT, `sound_bite` TEXT, `hint` TEXT, FOREIGN KEY(`user_id`) REFERENCES `user`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "card_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "user_id",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -165,8 +171,30 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
-        "foreignKeys": []
+        "indices": [
+          {
+            "name": "index_card_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_card_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "user",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "user_id"
+            ],
+            "referencedColumns": [
+              "user_id"
+            ]
+          }
+        ]
       },
       {
         "tableName": "response",
@@ -264,7 +292,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '132a2ea572617926d974dba3ef443f68')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9b1c3ff52bc3469805a947110ac34dba')"
     ]
   }
 }

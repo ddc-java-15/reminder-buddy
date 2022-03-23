@@ -13,7 +13,6 @@ import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
 import edu.cnm.deepdive.reminderbuddy.service.CardRepository;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
-import java.util.Date;
 import java.util.List;
 
 public class CardViewModel extends AndroidViewModel implements DefaultLifecycleObserver {
@@ -40,7 +39,8 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
     cardId = new MutableLiveData<>();
     card = Transformations.switchMap(cardId, repository::get);
     throwable = new MutableLiveData<>();
-    cards = Transformations.switchMap(userId, (id) -> repository.getAllByUser(id));
+    userId = new MutableLiveData<>();
+    cards = Transformations.switchMap(this.userId, repository::getAllByUser);
     pending = new CompositeDisposable();
   }
 
