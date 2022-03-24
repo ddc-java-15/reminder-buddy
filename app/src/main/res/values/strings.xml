@@ -35,6 +35,13 @@
   <string name="event_time_label">Time of event</string>
   <string name="event_details_title">Event Details</string>
   <string name="submit_guess_button">Submit guess</string>
+  <string name="input_box_hint">Input box hint</string>
+  <string name="image_box_hint">Image:</string>
+  <string name="hint">Hint:</string>
+  <string name="remind_hour">Remind me in one hour.</string>
+  <string name="remind_24_hour">Remind me in 24 hours.</string>
+  <string name="dont_remind">Don\'t remind me again. (Mark as completed.)</string>
+  <string name="close_response">Close enough? (This will record the response as correct.)</string>
 
 
 </resources>

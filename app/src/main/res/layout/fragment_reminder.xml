@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   android:padding="@dimen/half_static_spacing"
@@ -15,13 +14,14 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
 
-    android:text="Hint:"/>
+    android:text="@string/hint"/>
 
   <ImageView
     android:id="@+id/image"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text="Image:"
+    android:text="@string/image_box_hint"
+    android:contentDescription="@string/image_box_hint"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@id/hint"
@@ -42,7 +42,7 @@
       android:layout_margin="@dimen/half_dynamic_spacing"
       android:inputType="textMultiLine"
       android:maxLines="3"
-      android:hint="Input box hint"/>
+      android:hint="@string/input_box_hint"/>
   </com.google.android.material.textfield.TextInputLayout>
 
   <Button
@@ -62,7 +62,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:text="Remind me in one hour."
+    android:text="@string/remind_hour"
     app:layout_constraintTop_toBottomOf="@+id/submit_button"/>
 
   <RadioButton
@@ -70,7 +70,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:text="Remind me in 24 hours."
+    android:text="@string/remind_24_hour"
     app:layout_constraintTop_toBottomOf="@+id/remind_one_hour"/>
 
   <RadioButton
@@ -78,7 +78,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:text="Don't remind me again. (Mark as completed.)"
+    android:text="@string/dont_remind"
     app:layout_constraintTop_toBottomOf="@+id/remind_one_day"/>
 
 
@@ -88,7 +88,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:text="Close enough? (This will record the response as correct.)"
+    android:text="@string/close_response"
     app:layout_constraintTop_toBottomOf="@+id/dont_remind"/>
 
 
