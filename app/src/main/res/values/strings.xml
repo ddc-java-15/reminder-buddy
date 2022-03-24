@@ -34,6 +34,7 @@
   <string name="event_date_label">Date of event</string>
   <string name="event_time_label">Time of event</string>
   <string name="event_details_title">Event Details</string>
+  <string name="submit_guess_button">Submit guess</string>
 
 
 </resources>

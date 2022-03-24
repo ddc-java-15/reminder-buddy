@@ -49,7 +49,7 @@
     android:id="@+id/submit_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Submit"
+    android:text="@string/submit_guess_button"
     android:layout_margin="@dimen/half_static_spacing"
     android:gravity="center_vertical"
     app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +57,39 @@
     app:layout_constraintTop_toBottomOf="@id/input_response"
     app:layout_constraintBottom_toBottomOf="parent"/>
 
+  <RadioButton
+    android:id="@+id/remind_one_hour"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="Remind me in one hour."
+    app:layout_constraintTop_toBottomOf="@+id/submit_button"/>
+
+  <RadioButton
+    android:id="@+id/remind_one_day"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="Remind me in 24 hours."
+    app:layout_constraintTop_toBottomOf="@+id/remind_one_hour"/>
+
+  <RadioButton
+    android:id="@+id/dont_remind"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="Don't remind me again. (Mark as completed.)"
+    app:layout_constraintTop_toBottomOf="@+id/remind_one_day"/>
+
+
+
+  <RadioButton
+    android:id="@+id/near_guess_button"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="Close enough? (This will record the response as correct.)"
+    app:layout_constraintTop_toBottomOf="@+id/dont_remind"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
