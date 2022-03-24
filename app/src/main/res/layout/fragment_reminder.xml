@@ -2,44 +2,58 @@
 <androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:padding="@dimen/half_static_spacing"
+  android:layout_height="match_parent"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:padding="@dimen/half_dynamic_spacing"
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <TextView
-    android:id="@+id/hint"
+    android:id="@+id/hint_label"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    style="@style/TextAppearance.MaterialComponents.Subtitle1"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-
     android:text="@string/hint"/>
+
+  <TextView
+    android:id="@+id/hint"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    app:layout_constraintTop_toBottomOf="@id/hint_label"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:text="The hint from the event"/>
+
 
   <ImageView
     android:id="@+id/image"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/image_box_hint"
-    android:contentDescription="@string/image_box_hint"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    android:scaleType="fitCenter"
+    android:adjustViewBounds="true"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@id/hint"
     android:src="@drawable/ic_banner_foreground"
-    />
+    tools:ignore="ContentDescription"/>
 
   <com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/input_response"
+    android:id="@+id/response_layout"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/image">
     <com.google.android.material.textfield.TextInputEditText
-      android:id="@+id/input_response_box"
+      android:id="@+id/response"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/half_dynamic_spacing"
       android:inputType="textMultiLine"
       android:maxLines="3"
       android:hint="@string/input_box_hint"/>
@@ -50,54 +64,103 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/submit_guess_button"
-    android:layout_margin="@dimen/half_static_spacing"
-    android:gravity="center_vertical"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    android:visibility="visible"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/input_response"
-    app:layout_constraintBottom_toBottomOf="parent"/>
+    app:layout_constraintTop_toBottomOf="@id/response_layout"/>
 
-  <RadioButton
-    android:id="@+id/remind_one_hour"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+  <LinearLayout
+    android:id="@+id/match_controls"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    android:orientation="horizontal"
+    android:gravity="end|center_vertical"
+    android:visibility="invisible"
+    app:layout_constraintTop_toBottomOf="@id/response_layout"
     app:layout_constraintStart_toStartOf="parent"
-    android:text="@string/remind_hour"
-    app:layout_constraintTop_toBottomOf="@+id/submit_guess_button"/>
+    app:layout_constraintEnd_toEndOf="parent">
 
-  <RadioButton
-    android:id="@+id/remind_one_day"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+
+<!--    TODO Replace with individual-->
+
+    <ImageView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      android:layout_weight="1"
+      android:background="#8000FF00"
+      tools:ignore="ContentDescription"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="@dimen/half_dynamic_spacing"
+      android:layout_marginStart="@dimen/half_dynamic_spacing"
+      android:layout_marginEnd="0dp"
+      android:labelFor="@id/correct"
+      android:text="@string/correct_label"/>
+    <CheckBox
+      android:id="@+id/correct"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="@dimen/half_dynamic_spacing"
+      android:layout_marginEnd="@dimen/half_dynamic_spacing"
+      android:layout_marginStart="0dp"/>
+
+  </LinearLayout>
+
+  <RadioGroup
+    android:id="@+id/reminder_options"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/submit_guess_button"
+    app:layout_constraintBottom_toTopOf="@id/next_reminder"
     app:layout_constraintStart_toStartOf="parent"
-    android:text="@string/remind_24_hour"
-    app:layout_constraintTop_toBottomOf="@+id/remind_one_hour"/>
+    app:layout_constraintEnd_toEndOf="parent">
 
-  <RadioButton
-    android:id="@+id/dont_remind"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    app:layout_constraintStart_toStartOf="parent"
-    android:text="@string/dont_remind"
-    app:layout_constraintTop_toBottomOf="@+id/remind_one_day"/>
+    <RadioButton
+      android:id="@+id/remind_one_hour"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      android:text="@string/remind_hour"/>
 
+    <RadioButton
+      android:id="@+id/remind_one_day"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      android:text="@string/remind_24_hour"/>
 
-  <RadioButton
-    android:id="@+id/near_guess_button"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    app:layout_constraintStart_toStartOf="parent"
-    android:text="@string/close_response"
-    app:layout_constraintTop_toBottomOf="@+id/dont_remind"/>
+    <RadioButton
+      android:id="@+id/dont_remind"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      android:text="@string/dont_remind"
+      />
+
+    <RadioButton
+      android:id="@+id/near_guess_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      android:text="@string/close_response"/>
+  </RadioGroup>
+
 
   <ImageButton
     android:id="@+id/previous_reminder"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_static_spacing"
+    android:padding="@dimen/half_dynamic_spacing"
     android:src="@drawable/ic_baseline_arrow_back_24"
     android:background="?android:selectableItemBackgroundBorderless"
     android:tint="#ff000000"
-    app:layout_constraintTop_toBottomOf="@+id/near_guess_button"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     />
 
@@ -105,10 +168,12 @@
     android:id="@+id/next_reminder"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_static_spacing"
+    android:padding="@dimen/half_dynamic_spacing"
     android:src="@drawable/ic_baseline_arrow_forward_24"
     android:background="?android:selectableItemBackgroundBorderless"
     android:tint="#ff000000"
-    app:layout_constraintTop_toBottomOf="@+id/near_guess_button"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     />
 

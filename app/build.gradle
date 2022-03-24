@@ -102,6 +102,9 @@ dependencies {
     // Google Sign-in library.
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
 
+    // String similarity library.
+    implementation 'info.debatty:java-string-similarity:2.0.0'
+
     // Stetho (inspection) dependency
     implementation 'com.facebook.stetho:stetho:1.6.0'
 

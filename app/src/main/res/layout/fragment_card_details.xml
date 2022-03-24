@@ -82,7 +82,7 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@id/save">
       <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/hint"
+        android:id="@+id/hint_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"

@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import edu.cnm.deepdive.reminderbuddy.databinding.FragmentReminderBinding;
 
 public class ReminderFragment extends Fragment {
@@ -26,6 +28,11 @@ public class ReminderFragment extends Fragment {
 
   // TODO override onviewcreated and connect to a viewmodel.
 
+
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+  }
 
   @Override
   public void onDestroyView() {
