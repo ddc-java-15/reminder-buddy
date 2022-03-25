@@ -10,10 +10,13 @@ import android.view.ViewGroup;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import edu.cnm.deepdive.reminderbuddy.databinding.FragmentReminderBinding;
+import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
+import java.util.List;
 
 public class ReminderFragment extends Fragment {
 
 
+  private List<Card> cards;
   private FragmentReminderBinding binding;
 
 
@@ -27,8 +30,7 @@ public class ReminderFragment extends Fragment {
   }
 
 
-
-  // TODO override onviewcreated and connect to a viewmodel.
+// TODO override onviewcreated and connect to a viewmodel.
 
 
   @Override
@@ -36,4 +38,11 @@ public class ReminderFragment extends Fragment {
     binding = null;
     super.onDestroyView();
   }
+
+  // TODO Have Reminder Fragment get a randomized list of cards to allow the user to "test"
+  public List<Card> getCards() {
+    return cards;
+  }
+
+
 }
