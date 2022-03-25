@@ -71,7 +71,7 @@
     app:layout_constraintTop_toBottomOf="@id/response_layout"/>
 
   <LinearLayout
-    android:id="@+id/match_controls"
+    android:id="@+id/correct_control"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/half_dynamic_spacing"
@@ -81,9 +81,6 @@
     app:layout_constraintTop_toBottomOf="@id/response_layout"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent">
-
-
-<!--    TODO Replace with individual-->
 
     <ImageView
       android:layout_width="0dp"
@@ -107,7 +104,44 @@
       android:layout_height="wrap_content"
       android:layout_marginVertical="@dimen/half_dynamic_spacing"
       android:layout_marginEnd="@dimen/half_dynamic_spacing"
+      android:layout_marginStart="0dp"
+      />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/incorrect_control"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    android:orientation="horizontal"
+    android:gravity="end|center_vertical"
+    android:visibility="invisible"
+    app:layout_constraintTop_toBottomOf="@id/response_layout"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+    <ImageView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/half_dynamic_spacing"
+      android:layout_weight="1"
+      android:background="#FF0000"
+      tools:ignore="ContentDescription"/>
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="@dimen/half_dynamic_spacing"
+      android:layout_marginStart="@dimen/half_dynamic_spacing"
+      android:layout_marginEnd="0dp"
+      android:labelFor="@id/incorrect"
+      android:text="@string/incorrect_label"/>
+    <CheckBox
+      android:id="@+id/incorrect"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="@dimen/half_dynamic_spacing"
+      android:layout_marginEnd="@dimen/half_dynamic_spacing"
       android:layout_marginStart="0dp"/>
+
 
   </LinearLayout>
 

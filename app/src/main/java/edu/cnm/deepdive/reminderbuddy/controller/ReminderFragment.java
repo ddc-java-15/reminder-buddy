@@ -26,13 +26,10 @@ public class ReminderFragment extends Fragment {
 
   }
 
+
+
   // TODO override onviewcreated and connect to a viewmodel.
 
-
-  @Override
-  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);
-  }
 
   @Override
   public void onDestroyView() {

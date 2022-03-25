@@ -9,24 +9,49 @@
   app:cardCornerRadius="@dimen/half_static_spacing"
   android:padding="@dimen/half_static_spacing"
   >
+
+
   <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/half_dynamic_spacing"
-   >
+    >
 
-
+    <TextView
+      android:id="@+id/event_date"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_static_spacing"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/date"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/information"
+      app:layout_constraintHorizontal_weight="1"
+      android:text="@string/event_date_header"
+      android:textStyle="bold"/>
     <TextView
       android:id="@+id/date"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/event_date"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@id/information"
       app:layout_constraintHorizontal_weight="1"
       tools:text="05/06/2022"/>
 
+    <TextView
+      android:id="@+id/event_information"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_static_spacing"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/information"
+      app:layout_constraintStart_toEndOf="@id/date"
+      app:layout_constraintEnd_toStartOf="@id/location"
+      app:layout_constraintHorizontal_weight="2"
+      android:text="@string/event_information_header"
+      android:textStyle="bold"/>
     <TextView
       android:id="@+id/information"
       android:layout_width="0dp"
@@ -38,6 +63,18 @@
       app:layout_constraintHorizontal_weight="2"
       tools:text="Birthday party!!!"/>
 
+    <TextView
+      android:id="@+id/event_location"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_static_spacing"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/date"
+      app:layout_constraintStart_toEndOf="@id/information"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_weight="1"
+      android:text="@string/event_location_header"
+      android:textStyle="bold"/>
     <TextView
       android:id="@+id/location"
       android:layout_width="0dp"

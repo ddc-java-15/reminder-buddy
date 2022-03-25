@@ -104,7 +104,7 @@ public class CardDetailsFragment extends BottomSheetDialogFragment {
         .setInstant(card.getDate())
         .build();
     binding.information.setText(card.getInformation());
-    binding.hint.setText(card.getHint());
+    binding.hintLabel.setText(card.getHint());
     binding.location.setText(card.getLocation());
     binding.date.setText(dateFormat.format(card.getDate()));
     binding.time.setText(timeFormat.format(card.getDate()));
@@ -115,7 +115,7 @@ public class CardDetailsFragment extends BottomSheetDialogFragment {
     card.setUserId(userId);
     card.setInformation(binding.information.getText().toString().trim());
     card.setLocation(binding.location.getText().toString().trim());
-    card.setHint(binding.hint.getText().toString().trim());
+    card.setHint(binding.hintLabel.getText().toString().trim());
     card.setDate(calendar.getTime());
     cardViewModel.save(card);
     dismiss();

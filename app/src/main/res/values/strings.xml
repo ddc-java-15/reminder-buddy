@@ -43,6 +43,10 @@
   <string name="dont_remind">Don\'t remind me again. (Mark as completed.)</string>
   <string name="close_response">Close enough? (This will record the response as correct.)</string>
   <string name="correct_label">Correct</string>
+  <string name="incorrect_label">Incorrect</string>
+  <string name="event_date_header">Event Date</string>
+  <string name="event_information_header">Information</string>
+  <string name="event_location_header">Location</string>
 
 
 </resources>
