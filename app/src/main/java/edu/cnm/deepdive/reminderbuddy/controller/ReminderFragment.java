@@ -11,11 +11,13 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import edu.cnm.deepdive.reminderbuddy.databinding.FragmentReminderBinding;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
+import edu.cnm.deepdive.reminderbuddy.viewmodel.CardViewModel;
+import edu.cnm.deepdive.reminderbuddy.viewmodel.ReminderViewModel;
 import java.util.List;
 
 public class ReminderFragment extends Fragment {
 
-
+  private ReminderViewModel reminderViewModel;
   private List<Card> cards;
   private FragmentReminderBinding binding;
 
@@ -29,8 +31,16 @@ public class ReminderFragment extends Fragment {
 
   }
 
+  // TODO override onviewcreated and connect to a viewmodel.
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+    reminderViewModel = new ViewModelProvider(getCards()).get(ReminderViewModel.class));
+    reminderViewModel
+        .get
+  }
 
-// TODO override onviewcreated and connect to a viewmodel.
+
 
 
   @Override
