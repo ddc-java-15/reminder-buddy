@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.reminderbuddy.controller;
 
 import android.os.Bundle;
+import android.provider.CalendarContract.Reminders;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import com.google.android.material.snackbar.Snackbar;
 import edu.cnm.deepdive.reminderbuddy.databinding.FragmentReminderBinding;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
 import edu.cnm.deepdive.reminderbuddy.viewmodel.CardViewModel;
@@ -32,15 +34,21 @@ public class ReminderFragment extends Fragment {
   }
 
   // TODO override onviewcreated and connect to a viewmodel.
+  @SuppressWarnings("ConstantConditions")
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    reminderViewModel = new ViewModelProvider(getCards()).get(ReminderViewModel.class));
+    reminderViewModel = new ViewModelProvider(getActivity()).get(ReminderViewModel.class));
     reminderViewModel
-        .get
+        .getThrowable()
+        .observe(getViewLifecycleOwner(), this::handleThrowable);
+    reminderViewModel
+        .getReminder()
+        .observe(getViewLifecycleOwner(), this :: updateGameDisplay);
   }
 
-
+  private void updateGameDisplay(Reminders reminders) {
+  }
 
 
   @Override
@@ -54,5 +62,14 @@ public class ReminderFragment extends Fragment {
     return cards;
   }
 
+  private void handleThrowable(Throwable throwable) {
+    if (throwable != null) {
+      //noinspection ConstantConditions
+      Snackbar
+          .make(binding.getRoot(), throwable.getMessage(), Snackbar.LENGTH_LONG)
+          .show();
+    }
+  }
 
+  
 }
