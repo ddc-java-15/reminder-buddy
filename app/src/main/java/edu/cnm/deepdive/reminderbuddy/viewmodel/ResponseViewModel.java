@@ -16,6 +16,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class ResponseViewModel extends AndroidViewModel implements DefaultLifecycleObserver {
 
@@ -24,6 +25,7 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
   private final LiveData<Card> card;
   private final MutableLiveData<Long> userId;
   private final LiveData<List<Card>> futureCards;
+  private final MutableLiveData<Map<Boolean, Long>> summary;
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
 
@@ -35,6 +37,7 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
     userId = new MutableLiveData<>();
     futureCards = Transformations.switchMap(userId,
         (id) -> cardRepository.getAllByUser(id, new Date()));
+    summary = new MutableLiveData<>();
     throwable = new MutableLiveData<>();
     pending = new CompositeDisposable();
   }
@@ -49,10 +52,15 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
 
   public void setUserId(long userId) {
     this.userId.setValue(userId);
+    refreshSummary(userId);
   }
 
   public LiveData<List<Card>> getFutureCards() {
     return futureCards;
+  }
+
+  public LiveData<Map<Boolean, Long>> getSummary() {
+    return summary;
   }
 
   public void save(Response response) {
@@ -63,10 +71,21 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
             },
             this::postThrowable
         );
+    pending.add(disposable);
   }
 
   public LiveData<Throwable> getThrowable() {
     return throwable;
+  }
+
+  private void refreshSummary(long userId) {
+    Disposable disposable = cardRepository
+        .getSummary(userId)
+        .subscribe(
+            summary::postValue,
+            this::postThrowable
+        );
+    pending.add(disposable);
   }
 
   @Override

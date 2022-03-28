@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".controller.HistoryFragment">
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/vertical_guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.6"/>
+
+  <TextView
+    android:id="@+id/correct_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_static_spacing"
+    android:text="@string/correct_responses_label"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+    app:layout_constraintBottom_toTopOf="@id/incorrect_label"/>
+
+  <TextView
+    android:id="@+id/correct"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBaseline_toBaselineOf="@id/correct_label"
+    app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+    tools:text="42"/>
+
+  <TextView
+    android:id="@+id/incorrect_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_static_spacing"
+    android:text="@string/incorrect_responses_label"
+    app:layout_constraintTop_toBottomOf="@id/correct_label"
+    app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <TextView
+    android:id="@+id/incorrect"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBaseline_toBaselineOf="@id/incorrect_label"
+    app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+    tools:text="42"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

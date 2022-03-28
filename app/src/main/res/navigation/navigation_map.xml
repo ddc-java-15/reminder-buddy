@@ -27,6 +27,11 @@
     android:name="edu.cnm.deepdive.reminderbuddy.controller.ReminderFragment"
     tools:layout="@layout/fragment_reminder"/>
 
+  <fragment
+    android:id="@+id/navigation_history"
+    android:name="edu.cnm.deepdive.reminderbuddy.controller.HistoryFragment"
+    tools:layout="@layout/fragment_history"/>
+
   <dialog
     android:id="@+id/navigation_card_details"
     android:name="edu.cnm.deepdive.reminderbuddy.controller.CardDetailsFragment"

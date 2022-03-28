@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Response;
 import edu.cnm.deepdive.reminderbuddy.model.entity.User;
+import edu.cnm.deepdive.reminderbuddy.model.view.ResponseSummary;
 import io.reactivex.rxjava3.core.Single;
 import java.util.Collection;
 import java.util.List;
@@ -48,4 +49,6 @@ public interface ResponseDao {
   @Query("SELECT * FROM response ORDER BY response_id ASC")
   LiveData<List<Response>> select();
 
+  @Query("SELECT * FROM response_summary WHERE user_id = :userId ORDER BY correct")
+  Single<List<ResponseSummary>> summarize(long userId);
 }

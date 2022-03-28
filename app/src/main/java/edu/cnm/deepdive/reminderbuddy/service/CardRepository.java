@@ -6,11 +6,14 @@ import edu.cnm.deepdive.reminderbuddy.model.dao.CardDao;
 import edu.cnm.deepdive.reminderbuddy.model.dao.ResponseDao;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Response;
+import edu.cnm.deepdive.reminderbuddy.model.view.ResponseSummary;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CardRepository {
 
@@ -81,5 +84,13 @@ public class CardRepository {
         .subscribeOn(Schedulers.io());
   }
 
-
+  public Single<Map<Boolean, Long>> getSummary(long userId) {
+    return responseDao
+        .summarize(userId)
+        .map((summaries) -> summaries
+            .stream()
+            .collect(Collectors.toMap(ResponseSummary::isCorrect, ResponseSummary::getCount))
+        )
+        .subscribeOn(Schedulers.io());
+  }
 }

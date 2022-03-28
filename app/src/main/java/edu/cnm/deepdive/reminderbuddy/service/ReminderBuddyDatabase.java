@@ -13,6 +13,7 @@ import edu.cnm.deepdive.reminderbuddy.model.dao.CardDao;
 import edu.cnm.deepdive.reminderbuddy.model.dao.NotificationDao;
 import edu.cnm.deepdive.reminderbuddy.model.dao.ResponseDao;
 import edu.cnm.deepdive.reminderbuddy.model.dao.UserDao;
+import edu.cnm.deepdive.reminderbuddy.model.view.ResponseSummary;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.Date;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
@@ -23,9 +24,9 @@ import edu.cnm.deepdive.reminderbuddy.service.ReminderBuddyDatabase.Converters;
 import org.jetbrains.annotations.NotNull;
 
 @Database(
-    entities =
-        {User.class, Notification.class, Card.class, Response.class},
-        version = 1
+    entities = {User.class, Notification.class, Card.class, Response.class},
+    views = {ResponseSummary.class},
+    version = 1
 )
 @TypeConverters({Converters.class})
 public abstract class ReminderBuddyDatabase extends RoomDatabase {
@@ -77,12 +78,12 @@ public abstract class ReminderBuddyDatabase extends RoomDatabase {
 
     @TypeConverter
     public static Long toLong(Date value) {
-      return (value != null) ? value.getTime() : null ;
+      return (value != null) ? value.getTime() : null;
     }
 
     @TypeConverter
     public static Date toDate(Long value) {
-      return (value != null) ? new Date(value) : null ;
+      return (value != null) ? new Date(value) : null;
     }
   }
 
