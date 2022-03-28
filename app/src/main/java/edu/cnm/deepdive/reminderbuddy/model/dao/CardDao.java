@@ -10,6 +10,7 @@ import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
 import edu.cnm.deepdive.reminderbuddy.model.entity.User;
 import io.reactivex.rxjava3.core.Single;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @Dao
@@ -50,4 +51,9 @@ public interface CardDao {
 
   @Query("SELECT * FROM card WHERE user_id = :userId ORDER BY card_id ASC")
   LiveData<List<Card>> selectByUser(long userId);
+
+  @Query("SELECT * FROM card WHERE user_id = :userId AND date >= :date ORDER BY card_id ASC")
+  LiveData<List<Card>> selectByUser(long userId, Date date);
+
+
 }

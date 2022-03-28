@@ -37,6 +37,18 @@
       android:contentDescription="@string/cancel_label"
       android:tooltipText="@string/cancel_label"/>
 
+    <ImageButton
+      android:id="@+id/example"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/half_dynamic_spacing"
+      android:src="@drawable/ic_baseline_help_24"
+      android:background="?android:selectableItemBackgroundBorderless"
+      android:tint="#ff0000ff"
+      app:layout_constraintTop_toBottomOf="@id/cancel"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:contentDescription="@string/cancel_label"
+      android:tooltipText="@string/cancel_label"/>
     <!--    TODO Add objects for the required properties of a card-->
 
 

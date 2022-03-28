@@ -111,6 +111,7 @@ public class CardDetailsFragment extends BottomSheetDialogFragment {
   }
 
 
+  @SuppressWarnings("ConstantConditions")
   private void save() {
     card.setUserId(userId);
     card.setInformation(binding.information.getText().toString().trim());

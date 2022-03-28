@@ -30,11 +30,10 @@ public class Response {
   @ColumnInfo(name = "response_id")
   private long id;
 
-  @ColumnInfo(name = "correct_response")
-  private String correctResponse;
+  @ColumnInfo(name = "user_response")
+  private String userResponse;
 
-  @ColumnInfo(name = "incorrect_response")
-  private String incorrectResponse;
+  private boolean correct;
 
   @ColumnInfo(name = "next_reminder")
   @NonNull
@@ -44,7 +43,7 @@ public class Response {
   private long cardId;
 
   @ColumnInfo(name = "notification_id", index = true)
-  private long notificationId;
+  private Long notificationId;
 
   public long getId() {
     return id;
@@ -54,20 +53,20 @@ public class Response {
     this.id = id;
   }
 
-  public String getCorrectResponse() {
-    return correctResponse;
+  public String getUserResponse() {
+    return userResponse;
   }
 
-  public void setCorrectResponse(String correctResponse) {
-    this.correctResponse = correctResponse;
+  public void setUserResponse(String userResponse) {
+    this.userResponse = userResponse;
   }
 
-  public String getIncorrectResponse() {
-    return incorrectResponse;
+  public boolean isCorrect() {
+    return correct;
   }
 
-  public void setIncorrectResponse(String incorrectResponse) {
-    this.incorrectResponse = incorrectResponse;
+  public void setCorrect(boolean correct) {
+    this.correct = correct;
   }
 
   @NonNull
@@ -87,11 +86,11 @@ public class Response {
     this.cardId = cardId;
   }
 
-  public long getNotificationId() {
+  public Long getNotificationId() {
     return notificationId;
   }
 
-  public void setNotificationId(long notificationId) {
+  public void setNotificationId(Long notificationId) {
     this.notificationId = notificationId;
   }
 }

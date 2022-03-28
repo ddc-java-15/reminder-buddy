@@ -3,10 +3,13 @@ package edu.cnm.deepdive.reminderbuddy.service;
 import android.content.Context;
 import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.reminderbuddy.model.dao.CardDao;
+import edu.cnm.deepdive.reminderbuddy.model.dao.ResponseDao;
 import edu.cnm.deepdive.reminderbuddy.model.entity.Card;
+import edu.cnm.deepdive.reminderbuddy.model.entity.Response;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import java.util.Date;
 import java.util.List;
 
 public class CardRepository {
@@ -15,10 +18,13 @@ public class CardRepository {
 
   private final CardDao cardDao;
 
+  private final ResponseDao responseDao;
+
   public CardRepository(Context context) {
     this.context = context;
     ReminderBuddyDatabase database = ReminderBuddyDatabase.getInstance();
     cardDao = database.getCardDao();
+    responseDao = database.getResponseDao();
   }
 
   public LiveData<Card> get(long id) {
@@ -31,6 +37,10 @@ public class CardRepository {
 
   public LiveData<List<Card>> getAllByUser(long userId) {
     return (cardDao.selectByUser(userId));
+  }
+
+  public LiveData<List<Card>> getAllByUser(long userId, Date date) {
+    return (cardDao.selectByUser(userId, date));
   }
 
   public Single<Card> save(Card card) {
@@ -46,6 +56,16 @@ public class CardRepository {
                 .update(card)
                 .map((count) -> card)
     )
+        .subscribeOn(Schedulers.io());
+  }
+
+  public Single<Response> save(Response response) {
+    return responseDao
+        .insert(response)
+        .map((id) -> {
+          response.setId(id);
+          return response;
+        })
         .subscribeOn(Schedulers.io());
   }
 

@@ -47,6 +47,9 @@
   <string name="event_date_header">Event Date</string>
   <string name="event_information_header">Information</string>
   <string name="event_location_header">Location</string>
+  <string name="events">Home</string>
+  <string name="test_label">Test Memory</string>
+  <string name="response_history_label">Reponse History</string>
 
 
 </resources>

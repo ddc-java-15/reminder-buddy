@@ -3,13 +3,13 @@
 
   <item
     android:id="@+id/navigation_home"
-    android:title="Home"/>
+    android:title="@string/events"/>
 
   <item
     android:id="@+id/navigation_reminder"
-    android:title="Test Active Reminders"/>
+    android:title="@string/test_label"/>
 
   <item
-    android:id="@+id/data"
-    android:title="Data"/>
+    android:id="@+id/navigation_history"
+    android:title="@string/response_history_label"/>
 </menu>
