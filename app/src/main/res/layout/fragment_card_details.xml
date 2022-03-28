@@ -49,7 +49,6 @@
       app:layout_constraintEnd_toEndOf="parent"
       android:contentDescription="@string/cancel_label"
       android:tooltipText="@string/cancel_label"/>
-    <!--    TODO Add objects for the required properties of a card-->
 
 
     <TextView

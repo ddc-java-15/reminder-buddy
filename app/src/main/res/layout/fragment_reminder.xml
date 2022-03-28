@@ -60,7 +60,7 @@
   </com.google.android.material.textfield.TextInputLayout>
 
   <Button
-    android:id="@+id/submit_guess_button"
+    android:id="@+id/submit"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/submit_guess_button"
@@ -70,86 +70,30 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/response_layout"/>
 
-  <LinearLayout
-    android:id="@+id/correct_control"
+  <ProgressBar
+    android:id="@+id/match_quality"
     android:layout_width="0dp"
-    android:layout_height="wrap_content"
+    android:layout_height="16dp"
     android:layout_margin="@dimen/half_dynamic_spacing"
-    android:orientation="horizontal"
-    android:gravity="end|center_vertical"
+    android:layout_weight="1"
+    style="@android:style/Widget.Material.ProgressBar.Horizontal"
+    android:progressDrawable="@drawable/response_match_gradient"
+    android:max="100"
     android:visibility="invisible"
-    app:layout_constraintTop_toBottomOf="@id/response_layout"
+    app:layout_constraintTop_toTopOf="@id/submit"
+    app:layout_constraintBottom_toBottomOf="@id/submit"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent">
-
-    <ImageView
-      android:layout_width="0dp"
-      android:layout_height="match_parent"
-      android:layout_margin="@dimen/half_dynamic_spacing"
-      android:layout_weight="1"
-      android:background="#8000FF00"
-      tools:ignore="ContentDescription"/>
-
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="@dimen/half_dynamic_spacing"
-      android:layout_marginStart="@dimen/half_dynamic_spacing"
-      android:layout_marginEnd="0dp"
-      android:labelFor="@id/correct"
-      android:text="@string/correct_label"/>
-    <CheckBox
-      android:id="@+id/correct"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="@dimen/half_dynamic_spacing"
-      android:layout_marginEnd="@dimen/half_dynamic_spacing"
-      android:layout_marginStart="0dp"
-      />
-  </LinearLayout>
-
-  <LinearLayout
-    android:id="@+id/incorrect_control"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/half_dynamic_spacing"
-    android:orientation="horizontal"
-    android:gravity="end|center_vertical"
-    android:visibility="invisible"
-    app:layout_constraintTop_toBottomOf="@id/response_layout"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent">
-    <ImageView
-      android:layout_width="0dp"
-      android:layout_height="match_parent"
-      android:layout_margin="@dimen/half_dynamic_spacing"
-      android:layout_weight="1"
-      android:background="#FF0000"
-      tools:ignore="ContentDescription"/>
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="@dimen/half_dynamic_spacing"
-      android:layout_marginStart="@dimen/half_dynamic_spacing"
-      android:layout_marginEnd="0dp"
-      android:labelFor="@id/incorrect"
-      android:text="@string/incorrect_label"/>
-    <CheckBox
-      android:id="@+id/incorrect"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginVertical="@dimen/half_dynamic_spacing"
-      android:layout_marginEnd="@dimen/half_dynamic_spacing"
-      android:layout_marginStart="0dp"/>
-
-
-  </LinearLayout>
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintWidth_percent="0.5"
+    tools:progress="50"
+    tools:ignore="ContentDescription"/>
 
   <RadioGroup
     android:id="@+id/reminder_options"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/submit_guess_button"
+    android:visibility="invisible"
+    app:layout_constraintTop_toBottomOf="@id/submit"
     app:layout_constraintBottom_toTopOf="@id/next_reminder"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent">
@@ -159,6 +103,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
+      android:tag="false"
       android:text="@string/remind_hour"/>
 
     <RadioButton
@@ -166,6 +111,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
+      android:tag="false"
       android:text="@string/remind_24_hour"/>
 
     <RadioButton
@@ -173,6 +119,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
+      android:tag="false"
       android:text="@string/dont_remind"
       />
 
@@ -181,6 +128,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
+      android:tag="true"
       android:text="@string/close_response"/>
   </RadioGroup>
 

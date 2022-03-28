@@ -13,12 +13,6 @@ import java.text.DateFormat;
 import java.util.List;
 
 public class CardAdapter extends RecyclerView.Adapter<Holder> {
-  // TODO Declare fields for a layout inflater, date format, and a list of card
-
-  // TODO Define a constructor that takes a context and a list of card as parameters; populate list
-  //  of card field from parameter; populate the layout inflater using the context; populate the
-  //  date format using the context.
-
 
   private final Context context;
   private final LayoutInflater inflater;
@@ -68,8 +62,6 @@ public class CardAdapter extends RecyclerView.Adapter<Holder> {
     }
 
     private void bind(int position) {
-      // TODO Retrieve Card at position from list.
-      // TODO Populate view objects in binding with property values from card.
       Card item = cards.get(position);
       binding.date.setText(item.getDate().toString());
       binding.information.setText(item.getInformation().toString());

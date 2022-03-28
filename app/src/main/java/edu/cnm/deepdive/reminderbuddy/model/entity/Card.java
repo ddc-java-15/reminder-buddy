@@ -19,6 +19,9 @@ import java.util.Date;
     )
 
 )
+/**
+ * Implements a card that stores an event to be used as a reminder.
+ */
 public class Card {
 
   @PrimaryKey(autoGenerate = true)

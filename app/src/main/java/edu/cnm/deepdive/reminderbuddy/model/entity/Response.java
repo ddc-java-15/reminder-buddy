@@ -24,6 +24,10 @@ import java.util.Date;
         )
     }
 )
+/**
+ *
+ */
+
 public class Response {
 
   @PrimaryKey(autoGenerate = true)
