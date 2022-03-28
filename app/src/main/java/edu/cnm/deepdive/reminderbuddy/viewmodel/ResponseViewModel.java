@@ -26,6 +26,7 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
   private final MutableLiveData<Long> userId;
   private final LiveData<List<Card>> futureCards;
   private final MutableLiveData<Map<Boolean, Long>> summary;
+  private final MutableLiveData<Response> response;
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
 
@@ -38,6 +39,7 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
     futureCards = Transformations.switchMap(userId,
         (id) -> cardRepository.getAllByUser(id, new Date()));
     summary = new MutableLiveData<>();
+    response = new MutableLiveData<>();
     throwable = new MutableLiveData<>();
     pending = new CompositeDisposable();
   }
@@ -72,6 +74,10 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
             this::postThrowable
         );
     pending.add(disposable);
+  }
+
+  public MutableLiveData<Response> getResponse() {
+    return response;
   }
 
   public LiveData<Throwable> getThrowable() {

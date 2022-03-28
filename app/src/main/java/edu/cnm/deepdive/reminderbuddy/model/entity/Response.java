@@ -40,7 +40,6 @@ public class Response {
   private boolean correct;
 
   @ColumnInfo(name = "next_reminder")
-  @NonNull
   private Date nextReminder;
 
   @ColumnInfo(name = "card_id", index = true)
@@ -73,12 +72,11 @@ public class Response {
     this.correct = correct;
   }
 
-  @NonNull
   public Date getNextReminder() {
     return nextReminder;
   }
 
-  public void setNextReminder(@NonNull Date nextReminder) {
+  public void setNextReminder(Date nextReminder) {
     this.nextReminder = nextReminder;
   }
 

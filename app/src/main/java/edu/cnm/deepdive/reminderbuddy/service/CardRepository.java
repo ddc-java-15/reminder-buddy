@@ -63,12 +63,18 @@ public class CardRepository {
   }
 
   public Single<Response> save(Response response) {
-    return responseDao
-        .insert(response)
-        .map((id) -> {
-          response.setId(id);
-          return response;
-        })
+    return (
+        (response.getId() == 0)
+            ? responseDao
+            .insert(response)
+            .map((id) -> {
+              response.setId(id);
+              return response;
+            })
+            : responseDao
+                .update(response)
+                .map((count) -> response)
+    )
         .subscribeOn(Schedulers.io());
   }
 

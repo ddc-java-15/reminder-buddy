@@ -59,14 +59,16 @@ public class ReminderFragment extends Fragment {
 
   private void updateResponse(RadioGroup group, int checkedId) {
     View selection = group.findViewById(checkedId);
-    boolean correct = Boolean.parseBoolean((String) selection.getTag());
-    if (response == null) {
-      response = new Response();
-      response.setCardId(card.getId());
-      response.setUserResponse(binding.response.getText().toString().trim());
+    if (selection != null) {
+      boolean correct = Boolean.parseBoolean((String) selection.getTag());
+      if (response == null) {
+        response = new Response();
+        response.setCardId(card.getId());
+        response.setUserResponse(binding.response.getText().toString().trim());
+      }
+      response.setCorrect(correct);
+      responseViewModel.save(response);
     }
-    response.setCorrect(correct);
-    // TODO Save response
   }
 
   // TODO override onviewcreated and connect to a viewmodel.
@@ -91,6 +93,9 @@ public class ReminderFragment extends Fragment {
           cardIterator = cards.listIterator();
           next();
         });
+    responseViewModel
+        .getResponse()
+        .observe(getViewLifecycleOwner(), (response) -> this.response = response);
     loginViewModel = new ViewModelProvider(getActivity()).get(LoginViewModel.class);
     loginViewModel
         .getUser()
@@ -116,6 +121,7 @@ public class ReminderFragment extends Fragment {
   }
 
   private void updateControls() {
+    response = null;
     binding.nextReminder.setVisibility(cardIterator.hasNext() ? View.VISIBLE : View.INVISIBLE);
     binding.previousReminder.setVisibility(
         cardIterator.hasPrevious() ? View.VISIBLE : View.INVISIBLE);
@@ -130,6 +136,7 @@ public class ReminderFragment extends Fragment {
     }
     binding.submit.setVisibility(View.VISIBLE);
     binding.matchQuality.setVisibility(View.INVISIBLE);
+    binding.reminderOptions.clearCheck();
     binding.reminderOptions.setVisibility(View.INVISIBLE);
   }
 

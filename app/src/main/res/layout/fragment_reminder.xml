@@ -77,7 +77,6 @@
     android:layout_margin="@dimen/half_dynamic_spacing"
     android:layout_weight="1"
     style="@android:style/Widget.Material.ProgressBar.Horizontal"
-    android:progressDrawable="@drawable/response_match_gradient"
     android:max="100"
     android:visibility="invisible"
     app:layout_constraintTop_toTopOf="@id/submit"
