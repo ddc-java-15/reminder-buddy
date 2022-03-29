@@ -1,11 +1,3 @@
----
-title: DDL
-description: SQL statements to generate data model.
-menu: DDL
-order: 40
----
-
-```sqlite
 CREATE TABLE IF NOT EXISTS `user`
 (
     `user_id`   INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -64,6 +56,4 @@ FROM response AS r
          JOIN card AS c ON c.card_id = r.card_id
          JOIN user AS u ON u.user_id = c.user_id
 GROUP BY u.user_id, r.correct;
-```
 
-[`ddl.sql`](sql/ddl.sql)
