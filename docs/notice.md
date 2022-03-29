@@ -1,3 +1,10 @@
+---
+title: Copyright and license information
+description: Copyright and license information for Reminder Buddy and incorporated libraries.
+menu: License
+order: 100
+---
+
 ## Reminder Buddy
 
 Copyright 2022 Kyle Coleman. All rights reserved.
