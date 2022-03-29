@@ -63,3 +63,8 @@ Color-coded flashcards that help people determine the zone
 * Red for personal
 * Green for business
 * Blue for friends
+
+## Copyright and license
+
+Copyright 2022 Kyle Coleman. All rights reserved.
+
