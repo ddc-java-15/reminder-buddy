@@ -1,7 +1,7 @@
 ---
 title: Current State
 description: Functionality design aspects and stretch goals.
-menu: Stretch Goals and Current State
+menu: Current State and Stretch Goals
 order: 5
 ---
 
