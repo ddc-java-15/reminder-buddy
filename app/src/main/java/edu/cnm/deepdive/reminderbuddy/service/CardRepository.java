@@ -15,6 +15,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+
+/**
+ *
+ */
 public class CardRepository {
 
   private final Context context;
@@ -23,6 +27,10 @@ public class CardRepository {
 
   private final ResponseDao responseDao;
 
+  /**
+   *
+   * @param context
+   */
   public CardRepository(Context context) {
     this.context = context;
     ReminderBuddyDatabase database = ReminderBuddyDatabase.getInstance();
@@ -30,6 +38,11 @@ public class CardRepository {
     responseDao = database.getResponseDao();
   }
 
+  /**
+   *
+   * @param id
+   * @return
+   */
   public LiveData<Card> get(long id) {
     return cardDao.select(id);
   }

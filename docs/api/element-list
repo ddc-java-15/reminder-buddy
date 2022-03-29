@@ -1,0 +1,8 @@
+edu.cnm.deepdive.reminderbuddy
+edu.cnm.deepdive.reminderbuddy.adapter
+edu.cnm.deepdive.reminderbuddy.controller
+edu.cnm.deepdive.reminderbuddy.model.dao
+edu.cnm.deepdive.reminderbuddy.model.entity
+edu.cnm.deepdive.reminderbuddy.model.view
+edu.cnm.deepdive.reminderbuddy.service
+edu.cnm.deepdive.reminderbuddy.viewmodel

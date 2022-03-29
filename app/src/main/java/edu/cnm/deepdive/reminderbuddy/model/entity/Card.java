@@ -46,10 +46,18 @@ public class Card {
 
   private String hint;
 
+  /**
+   * Returns the unique identifier of this instance.
+   * @return
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * Sets the value of the unique identifier of this instance.
+   * @param id
+   */
   public void setId(long id) {
     this.id = id;
   }
