@@ -71,7 +71,6 @@ public class ReminderFragment extends Fragment {
     }
   }
 
-  // TODO override onviewcreated and connect to a viewmodel.
   @SuppressWarnings("ConstantConditions")
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -83,7 +82,6 @@ public class ReminderFragment extends Fragment {
     responseViewModel
         .getCard()
         .observe(getViewLifecycleOwner(), (card) -> {
-          // TODO display the hint and the image from the current card
         });
     responseViewModel
         .getFutureCards()
