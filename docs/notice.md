@@ -3,7 +3,10 @@ title: Copyright and license information
 description: Copyright and license information for Reminder Buddy and incorporated libraries.
 menu: License
 order: 100
+heading_navigator:
+  notice: false
 ---
+
 
 ## Reminder Buddy
 
