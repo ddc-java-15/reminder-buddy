@@ -1,16 +1,15 @@
 ---
-title: Current State and Stretch Goals
-description: Non-functioning application design aspects and future targets.
+title: Current State
+description: Functionality design aspects and stretch goals.
 menu: Stretch Goals and Current State
 order: 5
 ---
-# Current State of Application
 
 ## Functionality
 
-1. Creates reminders of important events.
+1. Creates reminders of important events through the landing page of the application.
 
-2. Self-testing via savable user-created flash-cards.
+2. Randomized testing via savable user-created flash-cards in the bottom navigation of application.
 
 3. Data history showing incorrect and correct answer totals.
 
@@ -30,10 +29,10 @@ order: 5
 
 ## Stretch goals and the future of Reminder Buddy
 
-1. Better integration for the device regarding notifications. In the future, the application would have a flash-card notify the user when it was time to run the test again.
+* Better integration for the device regarding notifications. In the future, the application would have a flash-card notify the user when it was time to run the test again.
 
-2. Knowledge is power, and providing examples of and the studies behind the psychology of remembering is important to share with users. With the knowledge being quickly accessed on the device, they will have an easier time applying the techniques to their personal flash-card designs.
+* Knowledge is power, and providing examples of and the studies behind the psychology of remembering is important to share with users. With the knowledge being quickly accessed on the device, they will have an easier time applying the techniques to their personal flash-card designs.
 
-3. In the future, Reminder Buddy will incorporate more data visuals such as pie charts, or line graphs showing memory over time gives the user visual representation of their learning. Furthermore, the addition of in-depth statistical documentation that will be available to them inside the application.
+* In the future, Reminder Buddy will incorporate more data visuals such as pie charts, or line graphs showing memory over time gives the user visual representation of their learning. Furthermore, the addition of in-depth statistical documentation that will be available to them inside the application.
 
-4. Customized reminders: how many times before and how often
+* Ability to produce and edit customizable reminders that allow for addition of images, location, sound bites and the interval timing of notifications. 
