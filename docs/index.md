@@ -7,7 +7,11 @@ order: 0
 
 ## Summary
 
-This application is a tool to help people build cognition using a normal part of phone usage. Reminders will be used to build memory by the user creating a flash-card with words, pictures, song, etc... that will assist people in reminding themselves through a connection in the brain.
+This application is a tool to help people build cognition via the user creating a representative flash-card. The flash cards will use memory enhancing techniques that assist individuals in reminding themselves through deeper connections in the brain.
+Cognitive memory techniques include...
+* Spaced-repetition goes hand-in-hand with the tool being used in this application: flash-cards, distributed over time will not only embed knowledge, but increase capacity for the future. 
+* Mnemonics and acronyms; Mnemonics is the study and development of systems for improving and assisting memory (Oxford Languages, 2020). A specific example of mnemonic design would be the solar system being referenced as the fingers on your hand. An example of an acronym would be PEMDAS, "Please excuse my dear aunt sally" used widely in the math world to recall the order-of-operations. 
+* Rhymes with meaning; these have to come from your own head, not to say that you can't reference a song, but rather it has to have value to you. The closer it is to your own thoughts, the stronger the connection in the brain.
 
 ## Intended users
 
@@ -17,17 +21,7 @@ This application is a tool to help people build cognition using a normal part of
 
 * Individuals who have issues with cognition and memory who desire to have stronger mental prowess to remembering things.
 
-  > As an elderly person who struggles with remembering, I want something to provide me with opportunity to strengthen my memory to stay on top of my life's important events and appointments.
-
-## Functionality
-
-1. Creates reminders of important events
-
-2. Strengthening event memory to build upon cognitive ability through assisted creative flashcard creation
-
-3. Analyzes data of correct/incorrect answers to determine memory trends for users to review
-
-4. Customized reminders: how many times before and how often
+  > As an elderly person who struggles with remembering, I want something that uses proven psychological methods to provide me with opportunity to strengthen my memory to stay on top of my life's important events and appointments.
 
 
 ## Persistent data
@@ -55,14 +49,6 @@ This application is a tool to help people build cognition using a normal part of
 * Sometimes it's a location that reminds you of what you need to do, add this to access your spatial memory!
 * Without a location established, it can be more difficult to recall where you are supposed to be, but the app will function without it!
 
-## Stretch goals/possible enhancements 
-
-Send reminders to friends and family in a similar style
-Have a charicature that serves as your buddy (cute and cuddly)
-Color-coded flashcards that help people determine the zone
-* Red for personal
-* Green for business
-* Blue for friends
 
 ## Copyright and license
 

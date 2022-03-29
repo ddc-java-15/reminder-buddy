@@ -14,6 +14,9 @@ import edu.cnm.deepdive.reminderbuddy.databinding.FragmentHomeBinding;
 import edu.cnm.deepdive.reminderbuddy.viewmodel.CardViewModel;
 import edu.cnm.deepdive.reminderbuddy.viewmodel.LoginViewModel;
 
+/**
+ *
+ */
 public class HomeFragment extends Fragment {
 
   private CardViewModel cardViewModel;

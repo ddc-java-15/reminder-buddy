@@ -14,7 +14,6 @@ import androidx.room.PrimaryKey;
 /**
  *
  */
-
 public class User {
 
   @PrimaryKey(autoGenerate = true)
@@ -26,30 +25,58 @@ public class User {
 
   private int age;
 
+  /**
+   *
+   * @return
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   *
+   * @param id
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   *
+   * @return
+   */
   public int getAge() {
     return age;
   }
 
+  /**
+   *
+   * @param age
+   */
   public void setAge(int age) {
     this.age = age;
   }
 
+  /**
+   *
+   * @return
+   */
   public String getOauthKey() {
     return oauthKey;
   }
 
+  /**
+   *
+   * @param oauthKey
+   */
   public void setOauthKey(String oauthKey) {
     this.oauthKey = oauthKey;
   }
 
+  /**
+   *
+   * @param displayName
+   */
   public void setName(String displayName) {
   }
 }
