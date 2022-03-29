@@ -14,8 +14,6 @@ order: 30
 - [`Card`](https://github.com/ddc-java-15/reminder-buddy/blob/main/app/src/main/java/edu/cnm/deepdive/reminderbuddy/model/entity/Card.java)
 
 
-
-
 ## DAO Interfaces
 
 - [`User DAO`](https://github.com/ddc-java-15/reminder-buddy/blob/main/app/src/main/java/edu/cnm/deepdive/reminderbuddy/model/dao/UserDao.java)
@@ -26,3 +24,7 @@ order: 30
 ## Database Class
 
 - [`Reminder Buddy Database`](https://github.com/ddc-java-15/reminder-buddy/blob/main/app/src/main/java/edu/cnm/deepdive/reminderbuddy/service/ReminderBuddyDatabase.java)
+
+## Repositories
+- [`Card Repository`](https://github.com/ddc-java-15/reminder-buddy/blob/main/app/src/main/java/edu/cnm/deepdive/reminderbuddy/service/CardRepository.java)
+- [`User Repository`](https://github.com/ddc-java-15/reminder-buddy/blob/main/app/src/main/java/edu/cnm/deepdive/reminderbuddy/service/UserRepository.java)
