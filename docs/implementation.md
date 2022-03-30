@@ -28,3 +28,5 @@ order: 30
 ## Repositories
 - [`Card Repository`](https://github.com/ddc-java-15/reminder-buddy/blob/main/app/src/main/java/edu/cnm/deepdive/reminderbuddy/service/CardRepository.java)
 - [`User Repository`](https://github.com/ddc-java-15/reminder-buddy/blob/main/app/src/main/java/edu/cnm/deepdive/reminderbuddy/service/UserRepository.java)
+
+## [`JavaDocs`](https://ddc-java-15.github.io/reminder-buddy/api/)
