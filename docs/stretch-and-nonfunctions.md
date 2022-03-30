@@ -38,5 +38,4 @@ Visual aspects that are desired for future releases.
 
 * User will be able to import photos and sound bites to utilize in their flash-cards.
 
-* In the future, Reminder Buddy will incorporate more data visuals such as pie charts, or line graphs showing memory over time gives the user visual representation of their learning. Furthermore, the addition of in-depth statistical documentation that will be available to them inside the application.
-
+* In the future, Reminder Buddy will incorporate more data visuals; pie charts and line graphs showing memory over time gives the user visual representation of their learning. Furthermore, the addition of in-depth statistical documentation that will be available to them inside the application; average time per guess, total cards guessed upon, etc... Additionally, options to clear the current data without disrupting current cards and saving a data image will also be implemented.
