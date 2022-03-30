@@ -8,6 +8,7 @@
   <fragment
     android:id="@+id/navigation_home"
     android:name="edu.cnm.deepdive.reminderbuddy.controller.HomeFragment"
+    android:label="@string/home_label"
     tools:layout="@layout/fragment_home">
 
 
@@ -25,11 +26,13 @@
   <fragment
     android:id="@+id/navigation_reminder"
     android:name="edu.cnm.deepdive.reminderbuddy.controller.ReminderFragment"
+    android:label="@string/reminder_label"
     tools:layout="@layout/fragment_reminder"/>
 
   <fragment
     android:id="@+id/navigation_history"
     android:name="edu.cnm.deepdive.reminderbuddy.controller.HistoryFragment"
+    android:label="@string/history_label"
     tools:layout="@layout/fragment_history"/>
 
   <dialog

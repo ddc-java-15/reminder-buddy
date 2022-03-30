@@ -52,6 +52,9 @@
   <string name="response_history_label">Response History</string>
   <string name="correct_responses_label">Correct responses:</string>
   <string name="incorrect_responses_label">Incorrect response:</string>
+  <string name="home_label">Reminder Cards</string>
+  <string name="reminder_label">Self-Test</string>
+  <string name="history_label">Response History</string>
 
 
 </resources>
