@@ -13,6 +13,9 @@ import androidx.navigation.Navigation;
 import edu.cnm.deepdive.reminderbuddy.R;
 import java.util.Calendar;
 
+/**
+ * Implements a widget that allows the user to set a time for the card.
+ */
 public class TimePickerDialogFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
 
   private Calendar calendar;

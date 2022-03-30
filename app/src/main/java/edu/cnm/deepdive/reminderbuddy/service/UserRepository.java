@@ -13,7 +13,9 @@ import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.List;
 
-
+/**
+ *
+ */
 public class UserRepository {
 
   private final Context context;
@@ -24,7 +26,10 @@ public class UserRepository {
 
   private final MutableLiveData<User> user;
 
-
+  /**
+   *
+   * @param context
+   */
   public UserRepository(Context context) {
     this.context = context;
     ReminderBuddyDatabase database = ReminderBuddyDatabase.getInstance();
@@ -38,18 +43,36 @@ public class UserRepository {
         );
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<User> getUser() {
     return user;
   }
 
+  /**
+   *
+   * @param id
+   * @return
+   */
   public LiveData<User> get(long id) {
     return userDao.select(id);
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<List<User>> getAll() {
     return userDao.select();
   }
 
+  /**
+   *
+   * @param user
+   * @return
+   */
   public Single<User> save(User user) {
     return (
         (user.getId() == 0)
@@ -66,6 +89,11 @@ public class UserRepository {
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   *
+   * @param user
+   * @return
+   */
   public Completable delete(User user) {
 
     return (
@@ -78,6 +106,10 @@ public class UserRepository {
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   *
+   * @return
+   */
   public Single<User> getOrCreate() {
     return signInService
             .refresh()

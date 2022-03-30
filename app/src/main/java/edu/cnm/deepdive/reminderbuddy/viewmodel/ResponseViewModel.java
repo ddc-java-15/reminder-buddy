@@ -18,6 +18,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ */
 public class ResponseViewModel extends AndroidViewModel implements DefaultLifecycleObserver {
 
   private final CardRepository cardRepository;
@@ -30,6 +33,10 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
 
+  /**
+   *
+   * @param application
+   */
   public ResponseViewModel(@NonNull Application application) {
     super(application);
     cardRepository = new CardRepository(application);
@@ -44,27 +51,51 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
     pending = new CompositeDisposable();
   }
 
+  /**
+   *
+   * @param cardId
+   */
   public void setCardId(long cardId) {
     this.cardId.setValue(cardId);
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<Card> getCard() {
     return card;
   }
 
+  /**
+   *
+   * @param userId
+   */
   public void setUserId(long userId) {
     this.userId.setValue(userId);
     refreshSummary(userId);
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<List<Card>> getFutureCards() {
     return futureCards;
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<Map<Boolean, Long>> getSummary() {
     return summary;
   }
 
+  /**
+   *
+   * @param response
+   */
   public void save(Response response) {
     Disposable disposable = cardRepository
         .save(response)
@@ -76,10 +107,18 @@ public class ResponseViewModel extends AndroidViewModel implements DefaultLifecy
     pending.add(disposable);
   }
 
+  /**
+   *
+   * @return
+   */
   public MutableLiveData<Response> getResponse() {
     return response;
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }

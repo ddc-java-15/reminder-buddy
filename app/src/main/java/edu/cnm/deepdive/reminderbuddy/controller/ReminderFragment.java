@@ -20,6 +20,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
+/**
+ *
+ */
 public class ReminderFragment extends Fragment {
 
   private ResponseViewModel responseViewModel;

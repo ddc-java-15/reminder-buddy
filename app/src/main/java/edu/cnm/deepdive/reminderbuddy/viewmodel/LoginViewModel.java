@@ -18,6 +18,9 @@ import edu.cnm.deepdive.reminderbuddy.service.UserRepository;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 
+/**
+ * Gives user access to Google sign-in service and returns throwable if action fails.
+ */
 public class LoginViewModel extends AndroidViewModel implements DefaultLifecycleObserver {
 
   private final GoogleSignInService signInService;
@@ -26,7 +29,10 @@ public class LoginViewModel extends AndroidViewModel implements DefaultLifecycle
   private final CompositeDisposable pending;
   private final UserRepository userRepository;
 
-
+  /**
+   * Connects the view model to the Google login service.
+   * @param application
+   */
   public LoginViewModel(@NonNull Application application) {
     super(application);
     signInService = GoogleSignInService.getInstance();
@@ -37,18 +43,33 @@ public class LoginViewModel extends AndroidViewModel implements DefaultLifecycle
     refresh();
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<User> getUser() {
     return userRepository.getUser();
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<GoogleSignInAccount> getAccount() {
     return account;
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
 
+  /**
+   *
+   */
   public void refresh() {
     throwable.setValue(null);
     Disposable disposable = signInService
@@ -60,10 +81,18 @@ public class LoginViewModel extends AndroidViewModel implements DefaultLifecycle
     pending.add(disposable);
   }
 
+  /**
+   *
+   * @param launcher
+   */
   public void startSignIn(ActivityResultLauncher<Intent> launcher) {
     signInService.startSignIn(launcher);
   }
 
+  /**
+   *
+   * @param result
+   */
   public void completeSignIn(ActivityResult result) {
     throwable.setValue(null);
     Disposable disposable = signInService
@@ -75,6 +104,9 @@ public class LoginViewModel extends AndroidViewModel implements DefaultLifecycle
     pending.add(disposable);
   }
 
+  /**
+   *
+   */
   public void signOut() {
     throwable.setValue(null);
     Disposable disposable = signInService

@@ -47,18 +47,38 @@ public class CardRepository {
     return cardDao.select(id);
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<List<Card>> getAll() {
     return cardDao.select();
   }
 
+  /**
+   *
+   * @param userId
+   * @return
+   */
   public LiveData<List<Card>> getAllByUser(long userId) {
     return (cardDao.selectByUser(userId));
   }
 
+  /**
+   *
+   * @param userId
+   * @param date
+   * @return
+   */
   public LiveData<List<Card>> getAllByUser(long userId, Date date) {
     return (cardDao.selectByUser(userId, date));
   }
 
+  /**
+   *
+   * @param card
+   * @return
+   */
   public Single<Card> save(Card card) {
     return (
         (card.getId() == 0)
@@ -75,6 +95,11 @@ public class CardRepository {
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   *
+   * @param response
+   * @return
+   */
   public Single<Response> save(Response response) {
     return (
         (response.getId() == 0)
@@ -91,6 +116,11 @@ public class CardRepository {
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   *
+   * @param card
+   * @return
+   */
   public Completable delete(Card card) {
 
     return (
@@ -103,6 +133,11 @@ public class CardRepository {
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   *
+   * @param userId
+   * @return
+   */
   public Single<Map<Boolean, Long>> getSummary(long userId) {
     return responseDao
         .summarize(userId)

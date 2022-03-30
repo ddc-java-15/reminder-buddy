@@ -15,6 +15,9 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import java.util.List;
 
+/**
+ * Retrieves an instance of the card view model.
+ */
 public class CardViewModel extends AndroidViewModel implements DefaultLifecycleObserver {
 
   private final CardRepository repository;
@@ -32,7 +35,10 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
   private final CompositeDisposable pending;
 
 
-
+  /**
+   *
+   * @param application
+   */
   public CardViewModel(@NonNull Application application) {
     super(application);
     repository = new CardRepository(application);
@@ -50,22 +56,42 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
     pending.clear();
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<Card> getCard() {
     return card;
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
 
+  /**
+   *
+   * @return
+   */
   public LiveData<List<Card>> getCards() {
     return cards;
   }
 
+  /**
+   *
+   * @param userId
+   */
   public void setUserId (long userId) {
     this.userId.setValue(userId);
   }
 
+  /**
+   *
+   * @param card
+   */
   public void save(Card card) {
     Disposable disposable = repository
         .save(card)
@@ -76,6 +102,10 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
     pending.add(disposable);
   }
 
+  /**
+   *
+   * @param card
+   */
   public void delete(Card card) {
     //noinspection ResultOfMethodCallIgnored
     repository
@@ -86,6 +116,10 @@ public class CardViewModel extends AndroidViewModel implements DefaultLifecycleO
         );
   }
 
+  /**
+   *
+   * @param id
+   */
   public void setCardId (long id) {
     cardId.setValue(id);
 

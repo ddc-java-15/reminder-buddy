@@ -12,7 +12,7 @@ import androidx.room.PrimaryKey;
     }
 )
 /**
- *
+ * Creates an instance of user to be utilized by the database and other classes.
  */
 public class User {
 
@@ -26,7 +26,7 @@ public class User {
   private int age;
 
   /**
-   *
+   * Gets the unique id of the user currently signed in.
    * @return
    */
   public long getId() {
@@ -34,7 +34,7 @@ public class User {
   }
 
   /**
-   *
+   * Sets the unique id of the user currently signed in.
    * @param id
    */
   public void setId(long id) {
@@ -42,7 +42,7 @@ public class User {
   }
 
   /**
-   *
+   * Gets age of user.
    * @return
    */
   public int getAge() {
@@ -50,7 +50,7 @@ public class User {
   }
 
   /**
-   *
+   * Sets age of user.
    * @param age
    */
   public void setAge(int age) {

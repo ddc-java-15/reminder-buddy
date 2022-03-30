@@ -20,7 +20,6 @@ import java.util.Date;
 /**
  *
  */
-
 public class Notification {
 
   @PrimaryKey(autoGenerate = true)
@@ -36,42 +35,82 @@ public class Notification {
 
   private String hint;
 
+  /**
+   *
+   * @return
+   */
   public long getCardId() {
     return cardId;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setCardId(long cardId) {
     this.cardId = cardId;
   }
 
+  /**
+   *
+   * @return
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   *
+   * @return
+   */
   public Date getFrequency() {
     return frequency;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setFrequency(Date frequency) {
     this.frequency = frequency;
   }
 
+  /**
+   *
+   * @return
+   */
   public String getSoundbite() {
     return soundbite;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setSoundbite(String soundbite) {
     this.soundbite = soundbite;
   }
 
+  /**
+   *
+   * @return
+   */
   public String getHint() {
     return hint;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setHint(String hint) {
     this.hint = hint;
   }

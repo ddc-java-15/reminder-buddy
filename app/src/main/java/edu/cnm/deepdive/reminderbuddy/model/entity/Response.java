@@ -25,9 +25,8 @@ import java.util.Date;
     }
 )
 /**
- *
+ * Creates an instance of response to be utilized by the database and other classes.
  */
-
 public class Response {
 
   @PrimaryKey(autoGenerate = true)
@@ -48,50 +47,98 @@ public class Response {
   @ColumnInfo(name = "notification_id", index = true)
   private Long notificationId;
 
+  /**
+   *
+   * @return
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   *
+   * @return
+   */
   public String getUserResponse() {
     return userResponse;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setUserResponse(String userResponse) {
     this.userResponse = userResponse;
   }
 
+  /**
+   *
+   * @return
+   */
   public boolean isCorrect() {
     return correct;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setCorrect(boolean correct) {
     this.correct = correct;
   }
 
+  /**
+   *
+   * @return
+   */
   public Date getNextReminder() {
     return nextReminder;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setNextReminder(Date nextReminder) {
     this.nextReminder = nextReminder;
   }
 
+  /**
+   *
+   * @return
+   */
   public long getCardId() {
     return cardId;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setCardId(long cardId) {
     this.cardId = cardId;
   }
 
+  /**
+   *
+   * @return
+   */
   public Long getNotificationId() {
     return notificationId;
   }
 
+  /**
+   *
+   * @return
+   */
   public void setNotificationId(Long notificationId) {
     this.notificationId = notificationId;
   }
